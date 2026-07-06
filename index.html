@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiro IDE Documentation Hub</title>
+  <meta name="description" content="A premium single-page documentation hub for Kiro IDE. Search, browse, and download the full documentation offline.">
+  
+  <!-- Typography & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Premium Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Markdown Parser & Sanitizer from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+  <!-- Main Script Controller -->
+  <script src="app.js" defer></script>
+</head>
+<body class="bg-black-900 font-sans antialiased text-prey-200">
+  <!-- Glowing Background Accents -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+
+  <div class="min-h-screen flex flex-col relative z-10">
+    <!-- Header -->
+    <header class="docs-header">
+      <div class="header-container">
+        <div class="flex items-center gap-3">
+          <!-- Logo Brand -->
+          <a href="#" class="brand-logo">
+            <span class="logo-icon">K</span>
+            <span class="font-outfit font-bold">Kiro <span class="text-purple-400 font-normal">Docs</span></span>
+          </a>
+          <!-- Live Update Badge -->
+          <span class="badge badge-sync">
+            <span class="badge-dot"></span>
+            Sync Active
+          </span>
+        </div>
+        
+        <!-- Metadata Stats & Action Button -->
+        <div class="flex items-center gap-6">
+          <div class="stats-container">
+            <div class="stat-item">
+              <span class="stat-val" id="stat-words">0 words</span>
+              <span>Total Word Count</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-val" id="stat-updated">...</span>
+              <span>Last Scraped</span>
+            </div>
+          </div>
+          
+          <button id="btn-download" class="btn-primary" title="Download entire documentation as a single Markdown file">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="download-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Markdown
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Container -->
+    <div class="docs-layout">
+      <!-- Sidebar Navigation -->
+      <aside class="docs-sidebar">
+        <!-- Search Input -->
+        <div class="search-wrapper">
+          <span class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <input type="text" id="input-search" placeholder="Search documentation..." autocomplete="off">
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc-container">
+          <h2 class="toc-title">Table of Contents</h2>
+          <nav class="toc-nav" id="nav-toc" aria-label="Documentation sections">
+            <!-- Dynamically populated links -->
+            <div class="skeleton-loader">
+              <div class="skeleton-line w-3-4"></div>
+              <div class="skeleton-line w-5-6"></div>
+              <div class="skeleton-line w-2-3"></div>
+              <div class="skeleton-line w-3-4"></div>
+            </div>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Documentation Content -->
+      <main class="docs-main">
+        <article class="prose" id="docs-content">
+          <!-- Dynamically parsed Markdown output -->
+          <div class="skeleton-loader space-y-6">
+            <div class="skeleton-line h-8 w-1-3"></div>
+            <div class="space-y-3">
+              <div class="skeleton-line w-full"></div>
+              <div class="skeleton-line w-5-6"></div>
+              <div class="skeleton-line w-4-5"></div>
+            </div>
+            <div class="skeleton-line h-6 w-1-4"></div>
+            <div class="skeleton-block"></div>
+          </div>
+        </article>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="docs-footer">
+      <div class="footer-container">
+        <div>
+          &copy; 2026 Kiro IDE Scraper Hub. Made for standalone developer usage.
+        </div>
+        <div class="footer-links">
+          <a href="https://kiro.dev" target="_blank" rel="noopener noreferrer">Official Kiro Website</a>
+          <a href="https://kiro.dev/docs/" target="_blank" rel="noopener noreferrer">Kiro Live Docs</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
