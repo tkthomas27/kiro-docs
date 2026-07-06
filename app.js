@@ -120,11 +120,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     activeLink.classList.add('active');
     
-    // Scroll active link into view in the sidebar if needed
-    const linkRect = activeLink.getBoundingClientRect();
-    const sidebarRect = navToc.parentElement.getBoundingClientRect();
-    if (linkRect.top < sidebarRect.top || linkRect.bottom > sidebarRect.bottom) {
-      activeLink.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    // Scroll active link into view inside the .docs-sidebar container directly
+    const sidebar = document.querySelector('.docs-sidebar');
+    if (sidebar) {
+      const linkRect = activeLink.getBoundingClientRect();
+      const sidebarRect = sidebar.getBoundingClientRect();
+      
+      // If the link is above or below the scroll boundaries of the sidebar
+      if (linkRect.top < sidebarRect.top) {
+        sidebar.scrollTop -= (sidebarRect.top - linkRect.top + 10);
+      } else if (linkRect.bottom > sidebarRect.bottom) {
+        sidebar.scrollTop += (linkRect.bottom - sidebarRect.bottom + 10);
+      }
     }
   }
 
@@ -144,12 +151,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function spyScroll() {
-    const scrollPos = window.scrollY || document.documentElement.scrollTop;
-    
-    // Find the heading that is closest to the top of the viewport
+    // Find the heading that is closest to the top of the viewport but not passed the sticky header (130px)
     let activeHeading = null;
     
-    // If we're at the very top of the page, highlight the first link
+    // If we are at the very top of the page, default to the first heading
+    const scrollPos = window.scrollY || document.documentElement.scrollTop;
     if (scrollPos < 100 && headings.length > 0) {
       const firstLink = tocLinks[0]?.link;
       if (firstLink) setActiveLink(firstLink);
@@ -158,13 +164,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < headings.length; i++) {
       const heading = headings[i];
-      const offsetTop = heading.offsetTop;
+      const rect = heading.getBoundingClientRect();
       
-      // Highlight the heading if the scroll position has passed it (with an offset for sticky header)
-      if (scrollPos >= offsetTop - 130) {
+      // If the heading has reached or passed the active viewport threshold (130px from top)
+      if (rect.top <= 130) {
         activeHeading = heading;
       } else {
-        break; // Headings are sorted by offsetTop, so we can stop searching
+        break; // Subsequent headings are further down the page
       }
     }
 
