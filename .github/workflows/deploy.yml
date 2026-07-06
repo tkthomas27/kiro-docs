@@ -1,27 +1,15 @@
-name: Deploy Docs Hub to GitHub Pages
+name: Auto-Scrape and Update Kiro Docs
 
 on:
-  push:
-    branches:
-      - main
   schedule:
     - cron: '0 0 * * *' # Automatically runs every day at midnight UTC to get new docs
   workflow_dispatch: # Allows you to manually trigger the update from the GitHub Actions tab
 
 permissions:
   contents: write # Needed to commit updated markdown back to repo
-  pages: write    # Needed to deploy to Pages
-  id-token: write # Needed for OIDC authentication with Pages
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
-  update-and-deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  update-docs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -32,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-name: '3.11'
+          python-version: '3.11'
 
       - name: Install Scraper Dependencies
         run: |
@@ -50,16 +38,3 @@ jobs:
           # Check if there are changes to commit, ignore error if nothing changed
           git diff-index --quiet HEAD || git commit -m "chore: auto-update scraped Kiro documentation"
           git push || echo "No changes or failed to push"
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.' # Deploy all static assets in the root folder
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-...
