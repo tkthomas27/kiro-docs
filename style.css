@@ -258,7 +258,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-h: calc(100vh - 140px);
+  max-height: calc(100vh - 140px);
   overflow-y: auto;
   padding-right: 8px;
 }
@@ -677,7 +677,7 @@ mark {
   .docs-sidebar {
     position: relative;
     top: 0;
-    max-h: none;
+    max-height: none;
     padding-right: 0;
   }
 
