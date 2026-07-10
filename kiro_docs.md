@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on July 09, 2026*
+*Compiled on July 10, 2026*
 
 ---
 # Get Started
@@ -881,7 +881,7 @@ You can create hooks in three ways: describe what you want in natural language, 
 
 #### JSON file format
 
-Hooks are JSON files stored in `.kiro/hooks/` (workspace-level) or `~/.kiro/hooks/` (user-level):
+Hooks are JSON files stored in `.kiro/hooks/` at the workspace level:
 
 ```json
 {
@@ -1000,7 +1000,7 @@ Now that you have created a hook file, you can further learn about hooks here:
 
 - **[Examples](https://kiro.dev/docs/hooks/examples)** - See examples and templates you can use
 
-Page updated:  June 25, 2026[Create powers](https://kiro.dev/docs/powers/create/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:  July 9, 2026[Create powers](https://kiro.dev/docs/powers/create/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
