@@ -1,64 +1,117 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 04, 2026*
+*Compiled on August 05, 2026*
 
 ---
 # Get Started
 
-Kiro is an agentic IDE that helps you do your best work with features such as specs, steering, and hooks.
+Kiro is an AI-powered development environment that helps you build software from prototype to production. One [unified agent harness](https://kiro.dev/docs/how-kiro-works) powers every surface (IDE, CLI, Web, and Mobile) so your configuration, specs, and steering work everywhere.
+
+[IDE](https://kiro.dev/docs/ide/)Loading image...![Kiro in the browser interface](https://kiro.dev/images/home/primary-web.png?h=f855b545)[Web](https://kiro.dev/docs/web/)
+
+Terminal — 80×24
+
+Loading cast file...[CLI](https://kiro.dev/docs/cli/)Loading image...![Kiro iOS interface](https://kiro.dev/images/home/ios.png?h=ced0921c)[Mobile](https://kiro.dev/docs/mobile/)
+
+### Choose your surface
+
+Pick the surface that fits your workflow. Your `.kiro/` configuration is shared across all of them.
+
+[IDEDesktop editor with chat, specs, hooks, and full editor integration](https://kiro.dev/docs/ide/)[CLITerminal-native agent with headless mode, session management, and CI integration](https://kiro.dev/docs/cli/)[WebBrowser-based agent for multi-repo tasks that plans, implements, and opens PRs](https://kiro.dev/docs/web/)[MobileMonitor tasks, review PRs, and chat with your agent on the go](https://kiro.dev/docs/mobile/)[CrewPersonal AI agent with autonomous tasks, scheduling, memory, and multi-channel access](https://kiro.dev/docs/crew/)
+
+### What you can do
+
+| I want to... | Use |
+| --- | --- |
+| Plan a feature with requirements, design, and tasks | [Specs](https://kiro.dev/docs/specs) |
+| Fix a bug with root cause analysis and regression prevention | [Bugfix Specs](https://kiro.dev/docs/specs/bugfix-specs) |
+| Chat and build iteratively without a plan | [Chat](https://kiro.dev/docs/ide/chat) (IDE) or start a session (CLI) |
+| Enforce project standards automatically | [Steering](https://kiro.dev/docs/steering) |
+| Automate actions on file save, tool use, or task completion | [Hooks](https://kiro.dev/docs/hooks) |
+| Connect external tools and APIs | [MCP](https://kiro.dev/docs/mcp) |
+| Control what the agent can access | [Permissions](https://kiro.dev/docs/permissions) |
+| Create specialized agents for specific workflows | [Custom agents](https://kiro.dev/docs/custom-agents) |
+| Extend the agent with reusable instruction packages | [Skills](https://kiro.dev/docs/skills) |
+| Add tools with built-in knowledge that activate on demand | [Powers](https://kiro.dev/docs/powers) |
+| Delegate parallel tasks to focused sub-agents | [Sub-agents](https://kiro.dev/docs/custom-agents/subagents) |
+| Undo agent changes or fork a conversation | [Checkpoints and rewind](https://kiro.dev/docs/checkpoints) |
+| Keep secrets and sensitive files away from the agent | [Kiroignore](https://kiro.dev/docs/kiroignore) |
+| Keep long sessions productive within context limits | [Compaction](https://kiro.dev/docs/compaction) |
 
 ### Get started
 
-Everything you need to begin your journey with Kiro in under 5 minutes.
+[Install KiroSet up the IDE, CLI, or Web in under 5 minutes](https://kiro.dev/docs/getting-started/installation/)[Your first projectWalk through specs, steering, and hooks hands-on](https://kiro.dev/docs/getting-started/first-project/)
 
-[Download & InstallGet Kiro running on your machine](https://kiro.dev/docs/getting-started/installation/)[First ProjectLearn about Kiro's features through a hands-on project](https://kiro.dev/docs/getting-started/first-project/)
+### One agent, every surface
 
-### Core capabilities
+Every Kiro surface is a front end to the same unified agent harness. Your steering files, permissions, hooks, MCP servers, and custom agents work identically whether you're in the IDE, CLI, or Web — start a spec in the IDE, continue it from the CLI, hand off implementation to the Web agent, and everything stays in sync through `.kiro/`.
 
-Learn about Kiro's core feature set.
+Each surface adds its own way of working on top: the IDE brings editor integration, the CLI brings terminal-native and headless workflows, and the Web brings zero-setup sandboxed sessions. [How Kiro works](https://kiro.dev/docs/how-kiro-works) explains the architecture, the agent loop, and where every capability plugs in.
 
-[SpecsPlan and build features using structured specifications.](https://kiro.dev/docs/specs/)[HooksAutomate repetitive tasks with intelligent triggers.](https://kiro.dev/docs/hooks/)[Agentic chatBuild features through natural conversation with AI.](https://kiro.dev/docs/chat/)[SteeringGuide AI with custom rules and context.](https://kiro.dev/docs/steering/)[MCP ServersConnect external tools and data sources.](https://kiro.dev/docs/mcp/)[Privacy FirstKeep code secure with privacy controls.](https://kiro.dev/docs/privacy-and-security/)
+### Learn more
 
-### Learning resources
-
-Master Kiro through hands-on tutorials and comprehensive documentation.
-
-[Your first projectA quick overview of how to use Kiro's feature set.](https://kiro.dev/docs/getting-started/first-project/)[Interactive TutorialBuild a real project while learning Kiro's features through our game-based tutorial](https://kiro.dev/docs/guides/learn-by-playing/)Page updated:  May 28, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   August 4, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
 # Installation
 
-### System Requirements
+Kiro is available as a desktop IDE, a command-line interface, a web app, a mobile app, and a personal AI agent (Crew). Pick the surface that fits your workflow. You can use more than one, and your `.kiro` configuration is shared across all of them.
 
-Kiro is available for macOS, Windows, and Linux.
+### System requirements
 
-- On macOS, Kiro runs on both Intel and Apple silicon with the latest security updates.
+**IDE** - macOS (Intel + Apple Silicon), Windows 10/11 (64-bit), or Linux (Ubuntu 24+, Debian 13+, Fedora 40+, Arch, Mint 22+).
 
-- On Windows, Kiro supports Windows 10 and 11 (64-bit only). ARM is not currently supported.
+**CLI** - macOS, Windows 11 (PowerShell), or Linux (glibc 2.34+ or musl variant).
 
-- On Linux, Kiro requires glibc 2.39 or higher. For example Ubuntu 24+, Debian 13+, Fedora 40+, Arch Linux, and Linux Mint 22+.
+**Web** - Any modern browser. No local installation required.
 
-### Download Kiro
+**Mobile** - iOS, distributed through Apple TestFlight during early access.
 
-1. Go to [kiro.dev](https://kiro.dev) and download the installer
+**Crew** - macOS, Linux (x86_64 and ARM), or Windows. Python 3.9+ required for source installs.
 
-1. Open the downloaded file and follow the installation instructions for your operating system (Windows, macOS, or Linux).
+### Install Kiro
 
-1. Open Kiro IDE and start coding!
+IDECLIWebMobileCrew1
 
-### First run
+##### Download Kiro
 
-1. When you open Kiro for the first time you will be asked to login with a provider of your choice that include social and AWS login options. Learn more about the [auth methods](https://kiro.dev/docs/getting-started/authentication).
+Go to [kiro.dev](https://kiro.dev) and download the installer for your operating system (macOS, Windows, or Linux).
 
-1. Once logged in, you can choose to [import your VS Code](https://kiro.dev/docs/guides/migrating-from-vscode) settings and extensions. If you're using another editor, you can skip this step. Select your preferred theme from the available options, then allow Kiro to set up shell integration, enabling the agent to execute commands on your behalf.
+2
 
-1. Finally, you'll arrive at the welcome page. Open a project to get started and proceed with [your first project](https://kiro.dev/docs/getting-started/first-project).
+##### Run the installer
 
-[View transcript: Kiro IDE initial setup demo video](https://kiro.dev/transcripts/kiro-3/)
+Open the downloaded file and follow the installation instructions for your platform.
+
+3
+
+##### Sign in
+
+When you open Kiro for the first time, sign in with a provider of your choice (Google, GitHub, AWS Builder ID, or organization identity). Learn more about [authentication](https://kiro.dev/docs/getting-started/authentication).
+
+4
+
+##### Import settings (optional)
+
+You can [import your VS Code settings and extensions](https://kiro.dev/docs/upgrade-guides/migrating-from-vscode). If you use another editor, skip this step and select your preferred theme.
+
+5
+
+##### Open a project
+
+From the welcome page, open a folder to start your first session. See [Your first project](https://kiro.dev/docs/getting-started/first-project) for a guided walkthrough.
+
+### Upgrading
+
+IDECLIWeb
+
+Kiro IDE auto-updates when a new version is available. You'll see a notification to restart and apply the update.
 
 ### Downgrade to a previous version
 
-You can revert to an earlier version of Kiro if an update introduces issues with your workflow.
+IDECLI
+
+You can revert to an earlier version of Kiro IDE if an update introduces issues with your workflow.
 
 1. Go to the [downloads page](https://kiro.dev/downloads)
 
@@ -81,35 +134,75 @@ You can revert to an earlier version of Kiro if an update introduces issues with
 
 Your settings, extensions, and sign-in state are preserved across reinstalls. When you're ready to move back to the latest version, download it from the [downloads page](https://kiro.dev/downloads) or let the application update automatically.
 
-### Language support
+### Uninstalling
 
-Kiro supports most popular programming languages. These guides cover environment setup and best practices:
+IDECLI
 
-- [TypeScript and JavaScript](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide)
+Uninstall Kiro IDE using your operating system's standard application removal process (drag to Trash on macOS, Apps & Features on Windows, or your package manager on Linux).
 
-- [Java](https://kiro.dev/docs/guides/languages-and-frameworks/java-guide)
+### Proxy configuration
 
-- [Python](https://kiro.dev/docs/guides/languages-and-frameworks/python-guide)
+Kiro respects standard proxy environment variables (`HTTP_PROXY`, `HTTPS_PROXY`, `NO_PROXY`) on both the IDE and the CLI. Set these in your shell:
 
-Page updated:  June 25, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+```bash
+export HTTP_PROXY=http://proxy.company.com:8080
+export HTTPS_PROXY=http://proxy.company.com:8080
+export NO_PROXY=localhost,127.0.0.1,.company.com
+```
+
+For proxies that require authentication:
+
+```bash
+export HTTPS_PROXY=http://username:password@proxy.company.com:8080
+```
+
+IDECLI
+
+In addition to the environment variables, you can configure proxy settings in **Settings > Proxy** inside Kiro.
+
+**Browser-based sign-in bypasses proxy settings**
+
+When you sign in, Kiro opens your default browser. This browser traffic uses your operating system's network stack, not the IDE's proxy configuration.
+
+For the full reference, including URLs to allowlist and data perimeter guidance, see [Firewalls, proxies, and data perimeters](https://kiro.dev/docs/privacy-and-security/firewalls).
+
+### Troubleshooting
+
+IDECLI
+
+For installation failures, network connectivity problems, sign-in errors, shell integration, and Windows-specific issues, see the [IDE troubleshooting guide](https://kiro.dev/docs/ide/troubleshooting).
+
+### Next steps
+
+- [Authentication](https://kiro.dev/docs/getting-started/authentication) — set up your sign-in method
+
+- [Your first project](https://kiro.dev/docs/getting-started/first-project) — guided walkthrough for new users
+
+- [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide) — environment setup per language
+
+Page updated:   August 4, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
 # First Project
 
-This guide walks you through Kiro's essential features by working with a real project. You'll learn how to use steering files, specs, hooks, and MCP servers to enhance your development workflow.
+This guide walks you through Kiro's essential features by working with a real project. You'll learn how to set up steering files, build features with specs, automate workflows with hooks, and extend capabilities with MCP servers.
 
 ### Prerequisites
 
 Before starting, ensure you have:
 
-- [Installed Kiro](https://kiro.dev/docs/getting-started/installation).
+- [Installed Kiro](https://kiro.dev/docs/getting-started/installation)
+
+- [Signed in](https://kiro.dev/docs/getting-started/authentication) with your Kiro account
 
 - A project to work with (either an existing project or a new one)
 
 - Basic familiarity with your project's structure and technology stack
 
 ### Open your project
+
+IDECLIWebMobile
 
 1. **Launch Kiro** and open your project:
 
@@ -120,7 +213,7 @@ Before starting, ensure you have:
 
     - Or drag and drop your project folder into Kiro
 
-    - Or go to the command line and run `kiro .` from your project directory
+    - Or run `kiro .` from your project directory in the command line
 
 1. **Access the Kiro Panel**:
 
@@ -138,17 +231,15 @@ Before starting, ensure you have:
 
     - The chat pane should be open by default
 
-    - This opens Kiro's conversational interface where you can interact with the AI
+    - This opens Kiro's conversational interface where you interact with the AI
 
-[View transcript: Opening the Kiro chat pane](https://kiro.dev/transcripts/kiro-pane/)
+### Set up steering files
 
-### Set up Steering files
+Steering files provide context about your project, helping Kiro understand your codebase, conventions, and requirements. They are stored in `.kiro/steering/` and shared across all Kiro surfaces.
 
-Steering files provide context about your project, helping Kiro understand your codebase, conventions, and requirements.
+IDECLIWebMobile
 
-[View transcript: Generating steering documents in Kiro](https://kiro.dev/transcripts/kiro-steering/)
-
-To get started choose `Generate Steering Docs` from the Kiro pane. Kiro generates project steering documents for you stored in `.kiro/steering/` that guide Kiro's behavior. They contain information about:
+Choose **Generate Steering Docs** from the Kiro panel. Kiro analyzes your repository and generates steering documents that guide its behavior, including:
 
 - Your product and its purpose
 
@@ -156,30 +247,34 @@ To get started choose `Generate Steering Docs` from the Kiro pane. Kiro generate
 
 - Project structure and conventions
 
-You can also create custom steering files by clicking the `+` button in the steering section and add things like coding standards, and workflows, and team best practices. Learn about steering [here](https://kiro.dev/docs/steering/).
+You can also create custom steering files by clicking the `+` button in the steering section to add coding standards, workflows, and team best practices.
 
-### Build features with Specs
+[View transcript: Generating steering documents in Kiro](https://kiro.dev/transcripts/kiro-steering/)
+
+Learn more about steering in the [Steering documentation](https://kiro.dev/docs/steering).
+
+### Build features with specs
 
 Specs transform high-level feature ideas into detailed implementation plans through three phases:
 
-1. **Requirements** - User stories with acceptance criteria in EARS notation
+1. **Requirements** - User stories with acceptance criteria
 
 1. **Design** - Technical architecture and implementation approach
 
 1. **Tasks** - Discrete, trackable implementation steps
 
-#### Create your first Spec
+IDECLIWebMobile
 
-[View transcript: Creating a spec in Kiro](https://kiro.dev/transcripts/specs-start/)
+#### Create your first spec
 
-1. **Start a New Spec**:
-
-
+1. **Start a new spec**:
 
 
-    - In your chat session, click the **Spec** button
 
-    - Choose the `+` button in the Kiro panel's Specs section
+
+    - Click the **Spec** button in your chat session
+
+    - Or choose the `+` button in the Kiro panel's Specs section
 
 1. **Enter a feature description**:
 
@@ -190,40 +285,38 @@ Specs transform high-level feature ideas into detailed implementation plans thro
 
     - Example: "Add a user authentication system with login, logout, and password reset functionality"
 
-1. **Follow the Guided Workflow**:
+1. **Follow the guided workflow**:
 
 
 
 
-    - **Requirements Phase**: Kiro will help structure your requirements using EARS notation
+    - **Requirements phase**: Kiro structures your requirements using EARS notation
 
-    - **Design Phase**: Technical architecture and component design will be documented
+    - **Design phase**: Technical architecture and component design are documented
 
-    - **Implementation Phase**: Discrete tasks will be generated for execution
+    - **Implementation phase**: Discrete tasks are generated for execution
 
-#### Execute Spec tasks
+[View transcript: Creating a spec in Kiro](https://kiro.dev/transcripts/specs-start/)
+
+#### Execute spec tasks
 
 Once your spec is complete:
 
-1. **Review Generated Tasks** in the `tasks.md` file
+1. **Review generated tasks** in the `tasks.md` file
 
-1. **Execute Tasks** by clicking on individual task items
+1. **Execute tasks** by clicking on individual task items
 
-1. **Track Progress** as tasks automatically update to "In Progress" and "Done"
+1. **Track progress** as tasks automatically update to "In Progress" and "Done"
 
-### Automate workflows with Hooks
+Learn more about specs in the [Specs documentation](https://kiro.dev/docs/specs).
 
-Agent Hooks eliminate manual work by automatically executing predefined actions when:
+### Automate workflows with hooks
 
-- Files are created, saved, or deleted
+Agent hooks eliminate manual work by automatically executing predefined actions when specific events occur - file changes, manual triggers, or pattern matches.
 
-- Manual triggers are activated
+IDECLIWebMobile
 
-- Specific file patterns are modified
-
-To get started:
-
-1. **Access Hook Creation**:
+1. **Access hook creation**:
 
 
 
@@ -232,7 +325,7 @@ To get started:
 
     - Click the `+` button to create a new hook
 
-1. **Define Hook Behavior**:
+1. **Define hook behavior**:
 
 
 
@@ -241,229 +334,74 @@ To get started:
 
     - Example: "When I save a React component file, automatically create or update its corresponding test file"
 
-1. **Configure Hook Settings**:
+1. **Configure hook settings**:
 
 
 
 
-    - **Event Type**: Choose when the hook triggers — file events (created, saved, deleted), prompt and agent lifecycle events (prompt submit, agent stop, pre/post tool use), spec task events (pre/post task execution), or manual trigger
+    - **Event type**: Choose when the hook triggers - file events (created, saved, deleted), prompt and agent lifecycle events, spec task events, or manual trigger
 
-    - **File Pattern**: Specify which files should trigger the hook (e.g., `src/**/*.tsx`)
+    - **File pattern**: Specify which files should trigger the hook (e.g., `src/**/*.tsx`)
 
     - **Instructions**: Define the specific actions to perform
 
-[View transcript: Creating an agent hook in Kiro](https://kiro.dev/transcripts/hooks/)
+Learn more in the [Hooks documentation](https://kiro.dev/docs/hooks).
 
 ### Extend capabilities with MCP
 
-Model Context Protocol (MCP) allows Kiro to:
+Model Context Protocol (MCP) allows Kiro to access specialized tools, APIs, knowledge bases, and external services.
 
-- Access specialized knowledge bases and documentation
-
-- Integrate with external APIs and services
-
-- Use domain-specific tools and utilities
-
-- Connect to databases and cloud services
+IDECLIWebMobile
 
 #### Set up MCP
 
-1. Open the Kiro panel by clicking the Kiro Ghost icon in the activity bar. First enable MCPs, and then click the edit button (pencil icon) next to MCP in the panel
+1. Open the Kiro panel by clicking the Kiro Ghost icon in the activity bar. Enable MCPs, then click the edit button (pencil icon) next to MCP in the panel.
 
-1. By default, Kiro ships with the [fetch MCP server](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch) in the JSON file. Flip it to `disabled=false` to connect to it.
+1. By default, Kiro ships with the [fetch MCP server](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch). Set `disabled` to `false` to connect to it.
 
-1. You can also **Add any MCP Server** by asking Kiro to add a new server or editing the JSON file directly:
+1. Add any MCP server by editing the JSON file:
 
-
-
-
-    ```json
-    {
-      "mcpServers": {
-        "web-search": {
-          "command": "uvx",
-          "args": ["mcp-server-brave-search"],
-          "env": {
-            "BRAVE_API_KEY": "your-api-key-here"
-          },
-          "disabled": false,
-          "autoApprove": ["search"]
-        }
-      }
+```json
+{
+  "mcpServers": {
+    "web-search": {
+      "command": "uvx",
+      "args": ["mcp-server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "your-api-key-here"
+      },
+      "disabled": false,
+      "autoApprove": ["search"]
     }
-    ```
+  }
+}
+```
 
 #### Use MCP tools
 
-Once configured, you can use MCP tools in several ways:
+Once configured, reference MCP tools in several ways:
 
-- **Direct Questions**
+- **Direct questions**: Ask questions that leverage the server's capabilities
 
+- **Explicit tool usage**: Reference specific tools with the `#MCP` context provider
 
-    - Ask questions that leverage the MCP server's capabilities:
+- **Integration**: Combine MCP with hooks and specs for automated workflows
 
-    - Example: `Search for the latest React 18 best practices`
-
-- **Explicit Tool Usage**
-
-
-    - Reference specific MCP tools with the #MCP context provider
-
-    - Example: `#[fetch] fetch` Use the web search to find examples of TypeScript generic constraints`
-
-- **Integration with Other Features**
-
-
-    - Combine MCP with hooks and specs:
-
-    - Example: `Create a hook that uses the web search MCP to find relevant documentation when I create new component files`
+Learn more in the [MCP documentation](https://kiro.dev/docs/mcp).
 
 ### Next steps
 
 Now that you've experienced Kiro's core features:
 
-- **Try the Interactive Tutorial**: Work through our [hands-on game development tutorial](https://kiro.dev/docs/guides/learn-by-playing)
+- **Try the interactive tutorial**: Work through the [hands-on game development tutorial](https://kiro.dev/docs/guides/learn-by-playing)
 
-- **Learn more about specs**: Check out the [specs documentation](https://kiro.dev/docs/specs) to learn more about the concepts and how they work
+- **Explore specs in depth**: Check out the [Specs documentation](https://kiro.dev/docs/specs) for the full workflow
 
-- **Join the Community**: Connect with other Kiro users and share your experiences on our [Discord server](https://discord.gg/kirodotdev)
+- **Learn about steering**: Read the [Steering documentation](https://kiro.dev/docs/steering) for advanced configuration
 
-Page updated:  June 25, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[What's new in IDE 1.0](https://kiro.dev/docs/whats-new-1-0/)
+- **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
----
-
-# Chat Interface
-
-Kiro offers a chat panel where you can interact with your code through natural language conversations. Just tell Kiro what you need. Ask questions about your codebase, request explanations for complex logic, generate new features, debug tricky issues, and automate repetitive tasks—all while Kiro maintains complete context of your project.
-
-[View transcript: Tour of the Kiro chat panel](https://kiro.dev/transcripts/kiro-agent/)
-
-### Key features
-
-[Contextual UnderstandingAsk questions about your entire codebase, get explanations, or request edits with full awareness of your project structure](https://kiro.dev/docs/chat/vibe/)[Smart Intent DetectionKiro intelligently determines whether you want information or action, adapting its responses to match your workflow needs](https://kiro.dev/docs/chat/autopilot/)[Vibe vs Spec sessionsChat sessions can be either vibe or spec sessions. Learn more about the differences between these two.](https://kiro.dev/docs/chat/vibe/)[Dev ServersRun long-running processes in the background without blocking your workflow](https://kiro.dev/docs/chat/dev-servers/)
-
-### Getting started
-
-#### Accessing chat
-
-There are multiple ways to access the chat in your development environment:
-
-1. **Keyboard Shortcut**: Press `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux) to open the chat panel
-
-1. **Command Palette**: Press `Cmd+Shift+P` (Mac) or  `Ctrl+Shift+P` (Windows/Linux) and search for `"Kiro: Open Chat"`
-
-1. **Secondary Side Bar**: Click the Kiro chat icon toggle using `Cmd+Opt+B` (Mac) or `Ctrl+Alt+B` in the top bar on the right to open the chat panel
-
-#### Multi-language support
-
-Kiro chat supports conversations in multiple natural languages. Supported languages include Mandarin, French, German, Italian, Japanese, Spanish, Korean, Hindi, and Portuguese, with more languages available. You can start a conversation in your preferred language, and Kiro will automatically detect it and respond in the same language. This capability is powered by the underlying large language model (LLM) used.
-
-#### Your first conversation
-
-Once the chat panel is open:
-
-1. Type your question or request in natural language in the chat input
-
-1. Press Enter to send your message
-
-1. Kiro will analyze your request and respond appropriately
-
-Example requests to get started:
-
-**Ask about your code**
-
-```
-"Explain how authentication works in this project"
-```
-
-**Generate new code**
-
-```
-"Create a React component for a user profile page"
-```
-
-**Fix issues**
-
-```
-"Help me fix the error in this function"
-```
-
-#### Exporting a conversation
-
-To export a chat conversation with Kiro, right-click the tab of the conversation you wish to export and select **Export Conversation**. This will export the conversation in markdown (.md) format.
-
-#### Smart intent detection
-
-Kiro intelligently analyzes your messages to understand whether you want information or action. When you ask questions like "How does this work?" or "What's the purpose of this code?",
-Kiro recognizes this as an information request and responds with explanations and documentation without modifying your code. When you use directives like "Create a component" or "Fix this bug", Kiro identifies this as an action request and will propose or implement the necessary code changes, execute commands, or manage files accordingly. This seamless intent recognition allows for natural conversation without requiring explicit commands to switch between information and action modes.
-
-### Context management
-
-Kiro's power comes from its deep understanding of your codebase context. It automatically analyzes open files in the editor, including their dependencies and structure, but you can also explicitly provide additional context.
-
-#### Context providers
-
-Use the `#` symbol in the chat input to access context providers:
-
-| Provider | Description | Example |
-| --- | --- | --- |
-| `#codebase` | Allow Kiro to automatically find relevant files across your project | `#codebase explain the authentication flow` |
-| `#file` | Reference specific files in your codebase | `#auth.ts explain this implementation` |
-| `#folder` | Reference a specific folder and its contents | `#components/ what components do we have?` |
-| `#git diff` | Reference the current Git changes | `#git diff explain what changed in this PR` |
-| `#terminal` | Include recent output from your active terminal and command history | `#terminal help me fix this build error` |
-| `#problems` | Include all problems in the current file | `#problems help me resolve these issues` |
-| `#url` | Include web documentation | `#url:https://docs.example.com/api explain this API` |
-| `#code` | Include specific code snippets in the context | `#code:const sum = (a, b) => a + b; explain this function` |
-| `#repository` | Include a map of your repository structure | `#repository how is this project organized?` |
-| `#current` | Reference the currently active file in the editor | `#current explain this component` |
-| `#steering` | Include specific steering files for guidance | `#steering:coding-standards.md review my code` |
-| `#docs` | Reference documentation files and content | `#docs:api-reference.md explain this API endpoint` |
-| `#spec` | Reference all files from a specific spec (requirements, design, tasks) | `#spec:user-authentication update the design file to include password reset flow` |
-| `#mcp` | Access MCP tools, prompts, and resource templates from connected servers | `#mcp:aws-docs how do I configure S3 buckets?` |
-
-You can combine multiple context providers in a single request:
-
-```
-#codebase #auth.ts explain how authentication works with our database
-```
-
-**Tip**
-
-The `#terminal` context provider is particularly powerful for debugging and troubleshooting. When you include `#terminal` in your message, Kiro can access your recent command history, outputs, and error messages to provide targeted assistance.
-
-**Common scenarios:**
-
-- **Build failures**: `#terminal My build is failing, what's the issue?`
-
-- **Test debugging**: `#terminal These tests aren't passing, help me understand why`
-
-- **Git issues**: `#terminal I'm stuck on this merge conflict`
-
-- **Dependency problems**: `#terminal npm install is throwing errors`
-
-Kiro can analyze the actual terminal output, understand error patterns, and suggest specific solutions based on what happened in your terminal session. For detailed examples and best practices, see the [Terminal Integration guide](https://kiro.dev/docs/chat/terminal).
-
-### Sessions and history
-
-Kiro maintains conversation history within sessions, allowing for continuous context-aware interactions.
-
-#### Managing sessions
-
-- **Create New Sessions**: Start fresh conversations for different topics or projects. Click on `+` icon in the chat panel to start a new session
-
-- **Switch between Sessions**: Easily navigate between ongoing conversations through the tab switcher
-
-- **View History**: Access previous interactions and their outcomes through the `History` button
-
-- **Task Tracking**: Monitor the progress of ongoing and completed tasks through the `Task list` button
-
-#### Execution history
-
-Kiro maintains a detailed history of sessions that includes actions taken such as code changes, commands executed,
-search results, file operations, and more. You can search, restore, or delete a specific session.
-
-Loading image...![Kiro Execution History](https://kiro.dev/images/kirohistory.png?h=268115f8)Page updated:  June 25, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Autopilot](https://kiro.dev/docs/chat/autopilot/)
+Page updated:   August 4, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -471,15 +409,23 @@ Loading image...![Kiro Execution History](https://kiro.dev/images/kirohistory.pn
 
 ### What is steering?
 
-Steering gives Kiro persistent knowledge about your workspace through markdown files. Instead of explaining your conventions in every chat, steering files ensure Kiro consistently follows your established patterns, libraries, and standards.
+Steering gives Kiro persistent knowledge about your project through markdown files. Instead of explaining your conventions in every chat, steering files ensure Kiro consistently follows your established patterns, libraries, and standards.
+
+| Capability | IDE | CLI | Web | Mobile |
+| --- | --- | --- | --- | --- |
+| Workspace steering (`.kiro/steering/`) | ✓ | ✓ | ✓ | ✓ |
+| Global steering (`~/.kiro/steering/`) | ✓ | ✓ | — | — |
+| Generate foundation files via UI | ✓ | — | — | — |
+| Inclusion modes (always, fileMatch, manual) | ✓ | ✓ | ✓ | ✓ |
+| AGENTS.md support | ✓ | ✓ | ✓ | ✓ |
 
 ### Key benefits
 
 **Consistent Code Generation** - Every component, API endpoint, or test follows your team's established patterns and conventions.
 
-**Reduced Repetition** - No need to explain workspace standards in each conversation. Kiro remembers your preferences.
+**Reduced Repetition** - No need to explain project standards in each conversation. Kiro remembers your preferences.
 
-**Team Alignment** - All developers work with the same standards, whether they're new to the workspace or seasoned contributors.
+**Team Alignment** - All developers work with the same standards, whether they're new to the project or seasoned contributors.
 
 **Scalable Project Knowledge** - Documentation that grows with your codebase, capturing decisions and patterns as your project evolves.
 
@@ -489,7 +435,7 @@ Steering files can be created with a workspace scope or a global scope.
 
 #### Workspace steering
 
-Workspace steering files reside in your workspace root folder under `.kiro/steering/`, and apply only to that specific workspace. Workspace steering files can be used to inform Kiro of patterns, libraries, and standards that apply to an individual workspace.
+Workspace steering files reside in your project root folder under `.kiro/steering/`, and apply only to that specific workspace. Workspace steering files can be used to inform Kiro of patterns, libraries, and standards that apply to an individual workspace.
 
 #### Global steering
 
@@ -501,25 +447,33 @@ In case of conflicting instructions between global and workspace steering, Kiro 
 
 The global steering feature can be used to define centralized steering files that apply to entire teams. Team steering files can be pushed to user's PCs via MDM solutions or Group Policies, or downloaded by users to their PCs from a central repository, and placed into the `~/.kiro/steering` folder.
 
-### Foundational steering files
+### Project steering files
 
-Kiro provides foundational steering files to establish core project context. You can generate these files as follows:
-
-1. Navigate to the **Steering** section in the Kiro panel
-
-1. Click the **Generate Steering Docs** button, or click the **+** button and select the **Foundation steering files** option
-
-1. Kiro will create three foundational files:
+Kiro provides project steering files to establish core project context:
 
 **Product Overview** (`product.md`) - Defines your product's purpose, target users, key features, and business objectives. This helps Kiro understand the "why" behind technical decisions and suggest solutions aligned with your product goals.
 
 **Technology Stack** (`tech.md`) - Documents your chosen frameworks, libraries, development tools, and technical constraints. When Kiro suggests implementations, it will prefer your established stack over alternatives.
 
-**Project Structure** (`structure.md`) - Outlines file organization, naming conventions, import patterns, and architectural decisions. This ensures generated code fits seamlessly into your existing codebase.
+**Project Structure** (`structure.md`) - Outlines file organization, naming conventions, import patterns, and architectural decisions. This helps generated code fit your existing codebase.
 
 These foundation files are included in every interaction by default, forming the baseline of Kiro's project understanding.
 
+IDECLIWeb
+
+To generate project steering files in the IDE:
+
+1. Navigate to the **Steering** section in the Kiro panel
+
+1. Click the **Generate Steering Docs** button, or click the **+** button and select the **Foundation steering files** option
+
+1. Kiro will create three project steering files in `.kiro/steering/`
+
 ### Creating custom steering files
+
+Extend Kiro's understanding with specialized guidance tailored to your project's unique needs.
+
+IDECLIWeb
 
 1. Navigate to the **Steering** section in the Kiro panel
 
@@ -533,9 +487,23 @@ These foundation files are included in every interaction by default, forming the
 
 1. Use natural language to describe your requirements
 
-1. Optionally, for workspace steering files, you can use the **Refine** button to have Kiro refine your requirements
+1. Optionally, use the **Refine** button to have Kiro refine your requirements
 
 Once created, steering files become immediately available across all Kiro interactions.
+
+### Steering with custom agents
+
+When using [custom agents](https://kiro.dev/docs/custom-agents/creating), steering files are not automatically included. You must explicitly add them to the agent's `resources` configuration to load steering context.
+
+To include all steering files in a custom agent, add the following to your agent configuration:
+
+```json
+{
+  "resources": ["file://.kiro/steering/**/*.md"]
+}
+```
+
+This glob pattern ensures all markdown files in your steering directory are loaded when using the agent. See the [custom agents documentation](https://kiro.dev/docs/custom-agents/creating) for a complete configuration example.
 
 ### Agents.md
 
@@ -551,7 +519,7 @@ Configure inclusion modes by adding front matter to the top of your steering fil
 
 **Info**
 
-The inclusion configuration must be the first content in the file, no blank lines or content before it.
+The inclusion configuration must be the first content in the file - no blank lines or content before it.
 
 #### Always included (default)
 
@@ -613,7 +581,7 @@ inclusion: manual
 
 Files are available on-demand by referencing them with `#steering-file-name` in your chat messages. This gives you precise control over when specialized context is needed without cluttering every interaction.
 
-**Usage**: Type `#troubleshooting-guide` or `#performance-optimization` in chat to include that steering file for the current conversation. Manual steering files also appear as slash commands — type `/` in chat to see and select them.
+**Usage**: Type `#troubleshooting-guide` or `#performance-optimization` in chat to include that steering file for the current conversation. Manual steering files also appear as slash commands - type `/` in chat to see and select them.
 
 **Best for**: Specialized workflows, troubleshooting guides, migration procedures, or context-heavy documentation that's only needed occasionally.
 
@@ -627,7 +595,7 @@ description: REST API design patterns and conventions. Use when creating or modi
 ---
 ```
 
-Files are automatically included when your request matches the description. This works similarly to [skills](https://kiro.dev/docs/skills)—Kiro uses the description to decide when the steering file is relevant.
+Files are automatically included when your request matches the description. This works similarly to [skills](https://kiro.dev/docs/skills) - Kiro uses the description to decide when the steering file is relevant.
 
 | Field | Required | Description |
 | --- | --- | --- |
@@ -636,7 +604,11 @@ Files are automatically included when your request matches the description. This
 
 Auto-inclusion steering files also appear as slash commands in chat. Type `/` followed by the steering file name to explicitly include it, in addition to the automatic activation based on description matching.
 
-**Best for**: Context-heavy guidance that should only load when relevant—like specialized domain knowledge, complex workflows, or detailed reference material that would overwhelm always-on steering.
+**Best for**: Context-heavy guidance that should only load when relevant - like specialized domain knowledge, complex workflows, or detailed reference material that would overwhelm always-on steering.
+
+**Info**
+
+On Kiro CLI, inclusion modes are not currently supported. All steering files in the `.kiro/steering/` directory are loaded automatically.
 
 ### File references
 
@@ -654,12 +626,31 @@ Examples:
 
 - Config templates: `#[[file:.env.example]]`
 
+### Steering during a session
+
+In addition to persistent steering files, you can steer Kiro in real time during any session by providing direction in the chat:
+
+- "Use the repository's existing error handling pattern"
+
+- "Follow the same approach as the UserService class"
+
+- "Make sure to add integration tests, not just unit tests"
+
+**Info**
+
+On Kiro Web, the agent asks clarifying questions upfront in [autonomous mode](https://kiro.dev/docs/web/autonomous-mode) - your answers act as steering for that task. In the default mode, you can steer continuously as you iterate together.
+
+### Teaching through code reviews
+
+On Kiro Web, you can steer the agent by leaving feedback on pull requests. When you comment on a PR with guidance like "always use our standard error handling" or "follow our naming conventions," the agent learns and applies those patterns to future work across all your repositories.
+
+Only your feedback (the user who created the task) influences the agent's learnings. Other reviewers' comments don't affect what the agent learns.
+
 ### Best practices
 
-**Keep Files Focused**
-One domain per file - API design, testing, or deployment procedures.
+**Keep Files Focused** - One domain per file - API design, testing, or deployment procedures.
 
-**Use Clear Names**
+**Use Clear Names**:
 
 - `api-rest-conventions.md` - REST API standards
 
@@ -667,16 +658,13 @@ One domain per file - API design, testing, or deployment procedures.
 
 - `components-form-validation.md` - Form component standards
 
-**Include Context**
-Explain why decisions were made, not just what the standards are.
+**Include Context** - Explain why decisions were made, not just what the standards are.
 
-**Provide Examples**
-Use code snippets and before/after comparisons to demonstrate standards.
+**Provide Examples** - Use code snippets and before/after comparisons to demonstrate standards.
 
-**Security First**
-Never include API keys, passwords, or sensitive data. Steering files are part of your codebase.
+**Security First** - Never include API keys, passwords, or sensitive data. Steering files are part of your codebase.
 
-**Maintain Regularly**
+**Maintain Regularly**:
 
 - Review during sprint planning and architecture changes
 
@@ -702,7 +690,9 @@ Never include API keys, passwords, or sensitive data. Steering files are part of
 
 - [Hooks](https://kiro.dev/docs/hooks) - Automate agent actions based on events
 
-Page updated:  February 18, 2026[Switching agents](https://kiro.dev/docs/custom-agents/agent-selector/)[Agent Skills](https://kiro.dev/docs/skills/)
+- [Custom Agents](https://kiro.dev/docs/custom-agents) - Build specialized agents with tailored steering
+
+Page updated:   August 4, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
@@ -711,6 +701,15 @@ Page updated:  February 18, 2026[Switching agents](https://kiro.dev/docs/custom-
 ### What are specs?
 
 Specs or specifications are structured artifacts that formalize the development process for features and bug fixes in your application. They provide a systematic approach to transform high-level ideas into detailed implementation plans with clear tracking and accountability.
+
+| Capability | IDE | CLI | Web | Mobile |
+| --- | --- | --- | --- | --- |
+| Feature Specs | ✓ | ✓ | ✓ | — |
+| Bugfix Specs | ✓ | ✓ | ✓ | — |
+| Quick Spec | ✓ | ✓ | ✓ | — |
+| Parallel task execution | ✓ | ✓ | ✓ | — |
+| [Analyze Requirements](https://kiro.dev/docs/specs/analyze-requirements) | ✓ | — | — | — |
+| [Correctness](https://kiro.dev/docs/specs/correctness) (property-based testing) | ✓ | — | — | — |
 
 With Kiro's specs, you can:
 
@@ -762,19 +761,21 @@ All specs follow a three-phase workflow that transforms your idea into executabl
 
 ### Task Execution
 
-Kiro provides a task execution interface for `tasks.md` files that displays real-time status updates. Tasks are updated as in-progress or completed, allowing you to efficiently track implementation progress and maintain an up-to-date view of your development status.
+IDECLIWeb
+
+Kiro provides a task execution interface for `tasks.md` files that displays real-time status updates. Tasks are updated as in-progress or completed, allowing you to efficiently track implementation progress.
 
 #### Running tasks in parallel
 
-When you click **Run all Tasks** on a spec, Kiro analyzes your task list, figures out which tasks depend on each other, and runs independent tasks concurrently. For most feature specs, this cuts execution time significantly without any setup.
+When you run all tasks on a spec, Kiro analyzes your task list, figures out which tasks depend on each other, and runs independent tasks concurrently. For most feature specs, this cuts execution time significantly without any setup.
 
 Kiro builds a **dependency graph** of the tasks in your `tasks.md` and groups independent tasks into **waves**:
 
-- **Wave 1** — all tasks with no dependencies. These run concurrently.
+- **Wave 1** - all tasks with no dependencies. These run concurrently.
 
-- **Wave 2** — all tasks whose dependencies were satisfied by Wave 1. These run concurrently.
+- **Wave 2** - all tasks whose dependencies were satisfied by Wave 1. These run concurrently.
 
-- **Wave N** — continues until all tasks are complete.
+- **Wave N** - continues until all tasks are complete.
 
 Waves execute sequentially; tasks within a wave execute concurrently.
 
@@ -798,7 +799,7 @@ For systematically diagnosing and fixing bugs with surgical precision while prev
 
 ### Getting Started
 
-Ready to create your first Spec? Here's how:
+IDECLIWeb
 
 1. From the Kiro pane, click the `+` button under **Specs**. Alternatively, choose **Spec** from the chat pane.
 
@@ -811,202 +812,174 @@ Ready to create your first Spec? Here's how:
 
 1. Follow the workflow through each phase to implementation
 
-### When to Use Specs vs Vibe
-
-**Use Specs when:**
-
-- Building complex features requiring structured planning
-
-- Fixing bugs where regressions are costly
-
-- You need documentation for team collaboration
-
-- Requirements or design need iteration
-
-**Use Vibe when:**
-
-- Quick exploratory coding
-
-- Prototyping without clear goals
-
 ### Learn more
 
-Dive deeper into Kiro's Spec system with these guides:
+Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:  July 22, 2026[Extension registry](https://kiro.dev/docs/editor/extension-registry/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 4, 2026[How Kiro works](https://kiro.dev/docs/how-kiro-works/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
 # Agent Hooks
 
-Agent hooks are automated triggers that execute agent prompts or shell commands when specific events occur in your IDE. Rather than manually asking for routine tasks, hooks handle them automatically.
+Hooks run shell commands or agent prompts automatically when specific events happen in your session - a file is saved, a tool is invoked, or a task completes. You define the trigger and the action; Kiro handles the execution.
 
-### What are agent hooks?
+| Capability | IDE | CLI | Web | Mobile |
+| --- | --- | --- | --- | --- |
+| Event-driven hooks | ✓ | ✓ | — | — |
+| Shell command actions | ✓ | ✓ | — | — |
+| Agent prompt actions | ✓ | ✓ | — | — |
+| Hook creation via chat | ✓ | ✓ | — | — |
 
-Agent hooks set up automated responses to events such as:
+### What you can do with hooks
 
-- Saving, creating, or deleting files
+- **Enforce standards** - run linters, formatters, or type checks automatically on file save
 
-- User prompt submission and agent turn completion
+- **Gate dangerous operations** - block tool execution unless preconditions are met (PreToolUse)
 
-- Before or after tool invocations
+- **Generate companion files** - auto-create tests, docs, or translations when new source files appear
 
-- Before or after spec task execution
+- **Validate before commit** - check code quality before the agent finalizes changes
 
-By setting up hooks for common tasks, you can:
+- **Inject context** - feed the agent additional instructions based on what it's doing
 
-- Maintain consistent code quality
+### Quick example
 
-- Prevent security vulnerabilities
+A `PostFileSave` hook that runs ESLint whenever you save a TypeScript file:
 
-- Reduce manual overhead
+```json
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Lint on save",
+    "trigger": "PostFileSave",
+    "matcher": "\\.(ts|tsx)$",
+    "action": { "type": "command", "command": "npx eslint --fix" }
+  }]
+}
+```
 
-- Standardize team processes
+This file lives at `.kiro/hooks/lint-on-save.json` and activates automatically - no manual prompting needed. The hook receives the saved file path and session context via STDIN. See [Hook Actions](https://kiro.dev/docs/hooks/actions) for details on how commands receive event data.
 
-### How agent hooks work
+### How hooks work
 
-The agent hook system follows a two-step process:
+Hook configurations are JSON files stored in `.kiro/hooks/`. Each file defines one or more hooks with a trigger event, an optional matcher pattern, and an action.
 
-1. **Event Detection**: The system monitors for specific events in your IDE
+When the trigger event fires, Kiro checks the matcher. If it matches (or no matcher is specified), the action executes:
 
-1. **Automated Action**: When an event occurs, an action (either an agent prompt or a shell command) is executed
+- **Command actions** run a shell command in your project root. The command receives session context as JSON on STDIN.
 
-### Setting up agent hooks
+- **Agent actions** inject a prompt into the current conversation, steering the agent's behavior.
+
+#### Available triggers
+
+| Trigger | When it fires | Can block? |
+| --- | --- | --- |
+| `PostFileSave` | After a file is saved | No |
+| `PostFileCreate` | After a new file is created | No |
+| `PostFileDelete` | After a file is deleted | No |
+| `PreToolUse` | Before a tool is about to execute | Yes |
+| `PostToolUse` | After a tool has executed | No |
+| `UserPromptSubmit` | When a message is sent to the agent | Yes |
+| `SessionStart` | When a new session begins | No |
+| `Stop` | When the agent finishes responding | No |
+| `PreTaskExec` | Before a spec task starts | Yes |
+| `PostTaskExec` | After a spec task completes | No |
 
 **Info**
 
-IDE 1.0 changes the UI for creating hooks. See [What's new in IDE 1.0](https://kiro.dev/docs/whats-new-1-0#hooks) for the updated flow and migration steps.
+Manual hooks from earlier IDE versions have been replaced by manual steering files. See [Steering](https://kiro.dev/docs/steering#manual-inclusion) for details.
 
-You can create hooks in three ways: describe what you want in natural language, manually fill out a form, or write a JSON file directly.
+See [Hook Triggers](https://kiro.dev/docs/hooks/types) for detailed descriptions, matcher patterns, and use cases for each trigger type.
 
-#### JSON file format
+### Hook file schema
 
-Hooks are JSON files stored in `.kiro/hooks/` at the workspace level:
+Each hook file is a standalone JSON file at `.kiro/hooks/<id>.json`. The full schema:
 
 ```json
 {
   "version": "v1",
   "hooks": [
     {
-      "name": "lint-on-save",
+      "name": "example-hook",
       "trigger": "PostFileSave",
-      "matcher": "\\.ts$",
-      "action": { "type": "command", "command": "npm run lint" },
-      "timeout": 30,
-      "enabled": true
+      "matcher": "\\.(ts|tsx)$",
+      "action": { "type": "command", "command": "npx eslint --fix" }
     }
   ]
 }
 ```
 
-| Field | Type | Required | Default | Description |
-| --- | --- | --- | --- | --- |
-| `name` | string | Yes |  | Identifier shown in telemetry |
-| `description` | string | No |  | Documentation only |
-| `trigger` | string | Yes |  | When the hook fires |
-| `matcher` | regex string | No | always-match | Filters by tool name or file path |
-| `action` | object | Yes |  | `{ type: "command", command: "..." }` or `{ type: "agent", prompt: "..." }` |
-| `timeout` | integer (seconds) | No | 60 | 0 disables timeout. Ignored for agent actions |
-| `enabled` | boolean | No | true | Set false to skip without deleting |
+#### Field reference
 
-#### Creating a hook from the UI
+| Field | Required | Description |
+| --- | --- | --- |
+| `version` | Yes | Schema version - currently `"v1"` |
+| `hooks` | Yes | Array of hook definitions |
+| `hooks[].name` | Yes | Human-readable identifier for the hook |
+| `hooks[].description` | No | Documentation only |
+| `hooks[].trigger` | Yes | Event that fires the hook (PascalCase - see [triggers table](#available-triggers)) |
+| `hooks[].matcher` | No | Regex pattern to filter which events fire this hook. For `PreToolUse`/`PostToolUse`, matches tool name. For file events, matches file path. Defaults to always-match. |
+| `hooks[].action.type` | Yes | `"command"` (shell command) or `"agent"` (inject prompt) |
+| `hooks[].action.command` | Cond. | Shell command to run (required when `type` is `"command"`) |
+| `hooks[].action.prompt` | Cond. | Prompt text to inject (required when `type` is `"agent"`) |
+| `hooks[].timeout` | No | Timeout in seconds for command actions (default: 60). `0` disables the timeout. Ignored for agent actions. |
+| `hooks[].enabled` | No | Set `false` to skip the hook without deleting it (default: `true`) |
 
-1. Navigate to the **Agent Hooks** section in the Kiro panel
+#### File naming and location
 
-1. Click the **+** button to create a new hook
+- **Location**: `.kiro/hooks/` in your project root
 
-1. Choose how you want to create the hook:
+- **Naming**: Any `.json` filename works - use descriptive kebab-case names (e.g., `lint-on-save.json`, `guard-writes.json`)
 
+- **Multiple hooks per file**: A single file can define multiple hooks in the `hooks` array
 
-    - **Manually create a hook** — configure a hook by hand in a form
+- **Activation**: Hooks activate automatically when a session starts - no manual registration needed
 
-    - **Ask Kiro to create a hook** — describe a hook using natural language and have Kiro create one
+### Setting up hooks
 
-#### Ask Kiro to create a hook
+IDECLIWeb
 
-1. Select **Ask Kiro to create a hook**
+Click the **+** button in the Agent Hooks section of the Kiro panel and select **Ask Kiro to create a hook**. Describe what you want in natural language - for example, "run tests after every file save" - and Kiro generates the hook configuration through conversation.
 
-1. Describe the hook workflow using natural language
+The resulting hook is saved as a JSON file in `.kiro/hooks/`.
 
-1. Press **Enter** or click **Submit** to proceed
+### Previous versions
 
-1. Review the generated configuration, adjust if needed, and click **Save Hook**
+The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. If you're upgrading from an earlier version:
 
-#### Manually create a hook
+- **From IDE 0.x** - Hooks moved from the previous format to standalone JSON files with PascalCase trigger names. See [What's new in IDE 1.0: Hooks](https://kiro.dev/docs/ide/whats-new-v1/hooks/) for the trigger mapping.
 
-1. Select **Manually create a hook** to open the hook form
-
-1. Fill in the form fields:
-
-
-    - **Title** — a short name for the hook
-
-    - **Description** — what the hook does
-
-    - **Event** — the trigger type (e.g., File Save, Post Tool Use, Pre Task Execution)
-
-    - **Tool name** — for Pre/Post Tool Use hooks, specify which tools to match
-
-    - **File pattern** — for file event hooks, specify which files to match
-
-    - **Action** — choose **Ask Kiro** (agent prompt) or **Run Command** (shell command)
-
-    - **Instructions** or **Command** — the prompt or shell command to execute
-
-1. Click **Create Hook** when done, or **Clear** to reset the form
-
-You can also open the Hook UI from the Command Palette with `Cmd + Shift + P` (Mac) or `Ctrl + Shift + P` (Windows/Linux) and typing `Kiro: Open Kiro Hook UI`.
-
-### Trigger reference
-
-| Trigger | Fires when | Matcher matches | Can block? |
-| --- | --- | --- | --- |
-| `SessionStart` | Session begins |  | No |
-| `Stop` | Agent completes its turn |  | No |
-| `PreToolUse` | Before tool executes | Tool name (regex) | Yes |
-| `PostToolUse` | After tool executes | Tool name (regex) | No |
-| `PreTaskExec` | Before a spec task starts |  | Yes |
-| `PostTaskExec` | After a spec task finishes |  | No |
-| `UserPromptSubmit` | User submits a prompt |  | Yes |
-| `PostFileCreate` | After a file is created by the agent | File path (regex) | No |
-| `PostFileSave` | After a file is saved by the agent | File path (regex) | No |
-| `PostFileDelete` | After a file is deleted by the agent | File path (regex) | No |
-
-**Info**
-
-Manual hooks have been replaced by manual steering files. See [Steering](https://kiro.dev/docs/steering) for details.
-
-### Exit code behavior
-
-For command actions:
-
-| Exit code | Behavior |
-| --- | --- |
-| `0` | Success. STDOUT added to context (SessionStart, UserPromptSubmit) or ignored (others) |
-| `2` | Block execution (PreToolUse, UserPromptSubmit, PreTaskExec only). STDERR returned to the agent |
-| Other | Warning shown to user. Tool execution proceeds |
+- **From CLI 2.x** - Hooks moved from embedded fields in agent config to standalone files. Run `kiro-cli agent migrate` to auto-convert, or see [CLI 3.0 Hooks migration](https://kiro.dev/docs/cli/v3/hooks-migration/) for the manual mapping.
 
 ### Next steps
 
-Now that you have created a hook file, you can further learn about hooks here:
+- **[Hook Triggers](https://kiro.dev/docs/hooks/types)** - Trigger types and their use cases
 
-- **[Hook Types](https://kiro.dev/docs/hooks/types)** - Learn about different trigger types and their use cases
+- **[Hook Actions](https://kiro.dev/docs/hooks/actions)** - Command and agent action details
 
-- **[Hook Actions](https://kiro.dev/docs/hooks/actions)** - Learn about different hook actions and their use cases
+- **[Management](https://kiro.dev/docs/hooks/management)** - Organize, edit, and maintain hooks
 
-- **[Management](https://kiro.dev/docs/hooks/management)** - Learn how to organize, edit, and maintain your hooks
+- **[Best Practices](https://kiro.dev/docs/hooks/best-practices)** - Patterns for effective hook design
 
-- **[Best Practices](https://kiro.dev/docs/hooks/best-practices)** - Follow patterns for effective hook design
+- **[Examples](https://kiro.dev/docs/hooks/examples)** - Templates you can use
 
-- **[Examples](https://kiro.dev/docs/hooks/examples)** - See examples and templates you can use
+- **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting)** - Common issues and solutions
 
-Page updated:  July 9, 2026[Create powers](https://kiro.dev/docs/powers/create/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   August 4, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
 # Model Context Protocol (MCP)
 
-Model Context Protocol (MCP) extends Kiro's capabilities by connecting to specialized servers that provide additional tools and context. This guide helps you set up, configure, and use MCP servers with Kiro.
+Model Context Protocol (MCP) extends Kiro's capabilities by connecting to specialized servers that provide additional tools and context. This guide helps you set up, configure, and use MCP servers with Kiro across all surfaces.
+
+| Capability | IDE | CLI | Web | Mobile |
+| --- | --- | --- | --- | --- |
+| Local (stdio) MCP servers | ✓ | ✓ | ✓ | — |
+| Remote (HTTP/SSE) MCP servers | ✓ | ✓ | — | — |
+| MCP config file (JSON) | ✓ | ✓ | — | — |
+| Server-provided prompts and resources | ✓ | ✓ | ✓ | — |
 
 ### What is MCP?
 
@@ -1036,41 +1009,63 @@ Before using MCP, make sure you have:
 
 1. Any specific prerequisites for the MCP servers you want to use (listed in each server's documentation)
 
-### Managing MCP servers
+#### Adding an MCP server
 
-#### Enabling MCP support
+IDECLIWeb1
 
-After creating your configuration file:
+##### Open the MCP configuration
 
-1. Open Settings with `Cmd + ,` (Mac) or `Ctrl + ,` (Windows/Linux)
+Open the command palette (`Cmd + Shift + P` on Mac, `Ctrl + Shift + P` on Windows/Linux) and search for **Kiro: Open workspace MCP config (JSON)** or **Kiro: Open user MCP config (JSON)**.
 
-1. Search for "MCP"
+Alternatively, open the Kiro panel and select the **Open MCP Config** icon.
 
-1. Enable the MCP support setting
+2
 
-#### Using the MCP servers tab
+##### Add your server configuration
 
-The Kiro panel includes an MCP servers tab that shows:
+```json
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "uvx",
+      "args": ["mcp-server-fetch"],
+      "disabled": false
+    }
+  }
+}
+```
 
-- All configured MCP servers
+3
 
-- Connection status indicators
+##### Save and verify
 
-- Quick access to server tools
+Save the config file (`Cmd+S`). Servers reconnect automatically. Check the MCP servers tab in the Kiro panel to confirm the server is connected.
 
-To use this feature:
+#### Agent configuration
 
-1. Select the Kiro icon in the activity bar
+You can also define MCP servers directly in an agent's configuration file. The `mcpServers` field specifies which MCP servers the agent has access to:
 
-1. Navigate to the MCP servers tab
+```json
+{
+  "name": "myagent",
+  "description": "My special agent",
+  "mcpServers": {
+    "fetch": {
+      "command": "fetch3.1",
+      "args": []
+    }
+  },
+  "includeMcpJson": false
+}
+```
 
-1. Click any tool name to insert a placeholder prompt in the chat
+The `includeMcpJson` field determines whether to include MCP servers defined in workspace and user-level configuration files. When set to `true`, the agent has access to all MCP servers defined in user and workspace-level configurations in addition to those defined in the agent's `mcpServers` field.
 
 ### Troubleshooting
 
-If you encounter issues with MCP servers:
-
 #### Checking MCP logs
+
+IDECLI
 
 1. Open the Kiro panel
 
@@ -1087,23 +1082,37 @@ If you encounter issues with MCP servers:
 | Tool not responding | Review MCP logs for specific error messages |
 | Configuration not loading | Validate JSON syntax and save the config file |
 
+#### Tool validation errors
+
+If you see "The following tools have been excluded due to validation errors", the tool fails one of these requirements:
+
+- Tool name exceeds 64 characters (including server prefix)
+
+- Tool name contains invalid characters (must match `^[a-zA-Z][a-zA-Z0-9_]*$`)
+
+- Tool description is empty
+
+Contact the MCP server maintainer to fix the tool specification.
+
+#### Large description warnings
+
+If you see "The following tools have large descriptions which may impact agent performance", a tool description exceeds 10,000 characters. The tool still works but may slow down responses. Consider asking the server maintainer to shorten the description.
+
 ### Additional resources
 
 - [Official MCP Documentation](https://modelcontextprotocol.io/introduction)
 
 ### Next steps
 
-Now that you have created a MCP server, you can further learn about MCP servers here:
+- **[Configuration](https://kiro.dev/docs/mcp/configuration)** - Detailed configuration options and file structure
 
-- **[Configuring MCPs](https://kiro.dev/docs/mcp/configuration/)** - Learn about configuring Model Context Protocol (MCP) servers
+- **[Server directory](https://kiro.dev/docs/mcp/servers)** - Browse available MCP servers
 
-- **[MCP Server management](https://kiro.dev/docs/mcp/servers/)** - Learn how to use common MCP servers with examples
+- **[Tools](https://kiro.dev/docs/mcp/usage)** - Learn how to use MCP tools effectively
 
-- **[Using MCP Tools](https://kiro.dev/docs/mcp/usage/)** - Learn how to effectively use MCP tools with Kiro
+- **[Best practices](https://kiro.dev/docs/mcp/security)** - Security best practices for MCP usage
 
-- **[Best Practices](https://kiro.dev/docs/mcp/security/)** - Best practices for effective MCP usage
-
-Page updated:  February 18, 2026[Agent Skills](https://kiro.dev/docs/skills/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
+Page updated:   August 4, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
 
 ---
 
@@ -1113,7 +1122,7 @@ The Kiro CLI brings the power of AI-assisted development to your terminal. Build
 
 Get started with the Kiro CLI in minutes.
 
-Install on   macOS, Linux, or  Windows`curl -fsSL https://cli.kiro.dev/install | bash`
+Install on  macOS ,  Linux , or Windows`curl -fsSL https://cli.kiro.dev/install | bash`
 
 Start using Kiro CLI:
 
@@ -1122,15 +1131,37 @@ cd my-project
 kiro-cli
 ```
 
-### Core features
+### CLI-unique features
 
-[Interactive ChatEngage with Kiro through natural conversation in your terminal.](https://kiro.dev/docs/cli/chat/)[Custom AgentsCreate and deploy specialized agents for your workflows.](https://kiro.dev/docs/cli/custom-agents/)[MCP IntegrationConnect external tools and data sources through Model Context Protocol.](https://kiro.dev/docs/cli/mcp/)[Smart HooksAutomate workflows with intelligent pre/post command hooks.](https://kiro.dev/docs/cli/hooks/)[Agent SteeringSteer Kiro agent with your best practices and preferences.](https://kiro.dev/docs/cli/steering/)[Auto CompleteIntelligent command completion with context awareness.](https://kiro.dev/docs/cli/autocomplete/)
+[Interactive ChatEngage with Kiro through natural conversation in your terminal.](https://kiro.dev/docs/cli/chat/)[Terminal UIRich terminal experience with syntax highlighting, panels, and themes.](https://kiro.dev/docs/cli/terminal-ui/)[Headless ModeRun prompts non-interactively in CI/CD pipelines with API keys.](https://kiro.dev/docs/cli/headless/)[ACPAgent Communication Protocol for programmatic agent interactions.](https://kiro.dev/docs/cli/acp/)[Auto CompleteIntelligent command completion with context awareness.](https://kiro.dev/docs/cli/autocomplete/)[Code IntelligenceLanguage-aware code understanding and navigation.](https://kiro.dev/docs/tools/code-intelligence/)
+
+### Shared capabilities
+
+The Kiro CLI uses the same core capabilities as every other Kiro surface. See the Features section for full documentation:
+
+- [Steering](https://kiro.dev/docs/steering) — Guide Kiro with project-specific context and conventions
+
+- [Hooks](https://kiro.dev/docs/hooks) — Automate actions before and after commands
+
+- [MCP](https://kiro.dev/docs/mcp) — Connect external tools and data sources
+
+- [Custom agents](https://kiro.dev/docs/custom-agents) — Build specialized agents for your workflows
+
+- [Skills](https://kiro.dev/docs/skills) — Extend Kiro with reusable skill packages
+
+- [Sub-agents](https://kiro.dev/docs/custom-agents/subagents) — Delegate focused work to agents that run in parallel
+
+- [Models](https://kiro.dev/docs/models) — Configure which AI models to use
+
+- [Permissions](https://kiro.dev/docs/permissions) — Manage capability-based access controls
 
 ### Use cases
 
-The Kiro CLI is perfect for:
+The Kiro CLI is ideal for:
 
 - **Interactive Development**: Chat with Kiro directly in your terminal for instant help
+
+- **Headless Automation**: Run prompts non-interactively in CI/CD pipelines using [API key authentication](https://kiro.dev/docs/cli/headless)
 
 - **Custom Automation**: Create specialized agents for your specific workflows
 
@@ -1140,11 +1171,9 @@ The Kiro CLI is perfect for:
 
 - **Intelligent Assistance**: Get context-aware suggestions and auto-completion
 
-- **Headless Automation**: Run prompts non-interactively in CI/CD pipelines using [API key authentication](https://kiro.dev/docs/cli/headless)
-
 - **Workflow Optimization**: Automate repetitive tasks with smart hooks
 
-Page updated:  April 19, 2026[Quick start](https://kiro.dev/docs/cli/quick-start/)
+Page updated:   August 4, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in 3.0](https://kiro.dev/docs/cli/v3/)
 
 ---
 
@@ -1164,15 +1193,29 @@ Kiro Web works in two modes. By default, you collaborate with the agent interact
 
 ### AWS Identity Center
 
-If your organization uses AWS Identity Center, your administrator must first enable Kiro Web from **Settings > Kiro Settings** in the AWS account where Kiro is configured. Kiro Web is available in **US East (N. Virginia) `us-east-1`** only during the preview. See the [Identity Center setup guide](https://kiro.dev/docs/web/identity-center) for additional requirements.
+If your organization uses AWS Identity Center, your administrator must first enable Kiro Web from **Settings > Kiro Settings** in the AWS account where Kiro is configured. Kiro Web is available in **US East (N. Virginia) `us-east-1`** only during the preview.
 
 ### Get started
 
-[SetupConnect GitHub and configure access](https://kiro.dev/docs/web/setup/)[Working with the agentChat, iterate, and open pull requests](https://kiro.dev/docs/web/using-the-agent/)
+[GitHub integrationConnect GitHub and configure access](https://kiro.dev/docs/web/github/)[Working with the agentChat, iterate, and open pull requests](https://kiro.dev/docs/web/using-the-agent/)
 
 ### Features
 
-[SpecsPlan features, bugs, and quick plans — then have the agent implement and open a PR](https://kiro.dev/docs/web/specs/)[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[AutomationsSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[SteeringGuide the agent with your team's standards and conventions](https://kiro.dev/docs/web/steering/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)Page updated:  June 18, 2026[Setup](https://kiro.dev/docs/web/setup/)
+[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[SpecsPlan features, bugs, and quick plans — then have the agent implement and open a PR](https://kiro.dev/docs/specs/)[AutomationsSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)
+
+### Shared capabilities
+
+Kiro Web uses the same core capabilities as the IDE and CLI. See the Features section for full documentation:
+
+- [Steering](https://kiro.dev/docs/steering) — guide the agent with your team's standards and conventions
+
+- [MCP](https://kiro.dev/docs/mcp) — extend the agent with custom tool integrations
+
+- [Powers](https://kiro.dev/docs/powers) — install ready-made tool packs
+
+- [Models](https://kiro.dev/docs/models) — available AI models
+
+Page updated:   August 4, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
@@ -1304,7 +1347,7 @@ Wrap up your learning journey and explore next steps.
 
 - [Conclusion](./99-conclusion)
 
-Page updated:  November 18, 2025[Java](https://kiro.dev/docs/guides/languages-and-frameworks/java-guide/)[Setup dev environment and launch the game](https://kiro.dev/docs/guides/learn-by-playing/00-setup/)
+Page updated:   August 4, 2026[Java](https://kiro.dev/docs/guides/languages-and-frameworks/java-guide/)[Setup dev environment and launch the game](https://kiro.dev/docs/guides/learn-by-playing/00-setup/)
 
 ---
 
@@ -1316,7 +1359,7 @@ Security is a shared responsibility between AWS and you. The [shared responsibil
 
 - Security of the cloud – AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud. AWS also provides you with services that you can use securely. Third-party auditors regularly test and verify the effectiveness of our security as part of the [AWS Compliance Programs](https://aws.amazon.com/compliance/programs/). To learn about the compliance programs that apply to Kiro, see [AWS Services in Scope by Compliance Program](https://aws.amazon.com/compliance/services-in-scope/).
 
-- Security in the cloud – Your responsibility is determined by the AWS service that you use. You are also responsible for other factors including the sensitivity of your data, your company’s requirements, and applicable laws and regulations
+- Security in the cloud – Your responsibility is determined by the AWS service that you use. You are also responsible for other factors including the sensitivity of your data, your company's requirements, and applicable laws and regulations
 
 This documentation helps you understand how to apply the shared responsibility model when using Kiro. It shows you how to configure Kiro to meet your security and compliance objectives. You also learn how to use other AWS services that help you to monitor and secure your Kiro resources.
 
@@ -1397,7 +1440,7 @@ In Autopilot mode, Kiro works autonomously:
 
 - Changes are written and applied immediately. You can review them after the fact.
 
-- You can interrupt at any time and revert changes via **Revert all changes** or [checkpoints](https://kiro.dev/docs/chat/checkpoints).
+- You can interrupt at any time and revert changes via **Revert all changes** or [checkpoints](https://kiro.dev/docs/checkpoints).
 
 #### Supervised mode
 
@@ -1417,7 +1460,7 @@ Supervised mode is best suited for situations where you want to closely review a
 
 Use **Autopilot** when you trust the task scope and want the agent to work efficiently without interruption. Use **Supervised** when you want to review each set of changes before they persist. In both cases, apply the security controls described in [best practices](#best-practices) to protect sensitive files, credentials, and infrastructure.
 
-When operating in either mode, you can view individual or all file changes made by the agent by selecting **View all changes** in the **Chat** module. You can also select **Revert all changes** or revert to a [checkpoint](https://kiro.dev/docs/chat/checkpoints) to restore your files to their previous state.
+When operating in either mode, you can view individual or all file changes made by the agent by selecting **View all changes** in the **Chat** module. You can also select **Revert all changes** or revert to a [checkpoint](https://kiro.dev/docs/checkpoints) to restore your files to their previous state.
 
 ### Trusted commands
 
@@ -1436,6 +1479,10 @@ The system treats entire commands as single strings and only checks if they star
 ### Protected paths
 
 Kiro requires explicit approval before writing to certain protected paths, preventing unintended modifications to sensitive workspace configuration files. This applies in both Autopilot and Supervised mode — when the agent attempts to create or modify a file matching a protected pattern, you see a confirmation prompt and the change is not applied until you approve it. If you decline, the agent skips the write and continues with the rest of the task.
+
+**Info**
+
+Protected paths are enforced in the Kiro IDE. In the CLI, trusted commands and workspace isolation serve as the primary access controls.
 
 #### Protected path patterns
 
@@ -1462,7 +1509,7 @@ When a match is detected, Kiro pauses and displays a confirmation prompt. The fi
 
 ### Best practices
 
-Kiro provides a number of security features to consider as you develop and implement your own security policies. The following best practices are general guidelines and don’t represent a complete security solution. Because these best practices might not be appropriate or sufficient for your environment, treat them as helpful considerations rather than prescriptions.
+Kiro provides a number of security features to consider as you develop and implement your own security policies. The following best practices are general guidelines and don't represent a complete security solution. Because these best practices might not be appropriate or sufficient for your environment, treat them as helpful considerations rather than prescriptions.
 
 #### Protecting your resources
 
@@ -1519,8 +1566,8 @@ When using GitHub or Google authentication with Kiro, be aware that the Kiro age
 **Security Note**: Using remote extensions opens a connection between your local machine and the remote machine. Only connect to secure remote machines that you trust and that are owned by a party whom you trust. A compromised remote could use the connection to execute code on your local machine.
 Third-party extensions including remote extensions are not developed, maintained, or managed by Kiro. We are not responsible for third-party extensions and cannot guarantee their stability, compatibility, or ongoing support.
 
-Kiro supports Open VSX extensions, including remote SSH extensions (the community-maintained [Open Remote - SSH](https://open-vsx.org/extension/jeanp413/open-remote-ssh) extension on Open VSX is a popular choice), to provide a familiar development experience. For comprehensive information about extension compatibility and support in Kiro, see our [extension compatibility guide](https://kiro.dev/docs/guides/migrating-from-vscode/#extension-compatibility).
+Kiro supports Open VSX extensions, including remote SSH extensions (the community-maintained [Open Remote - SSH](https://open-vsx.org/extension/jeanp413/open-remote-ssh) extension on Open VSX is a popular choice), to provide a familiar development experience. For comprehensive information about extension compatibility and support in Kiro, see our [extension compatibility guide](https://kiro.dev/docs/upgrade-guides/migrating-from-vscode/#extension-compatibility).
 
 By following these practices, you can enjoy Kiro's capabilities while maintaining appropriate security boundaries for your development environment.
 
-Page updated:  May 15, 2026[Agent Focus Mode](https://kiro.dev/docs/experimental/focus-mode/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
+Page updated:   August 4, 2026[Supported regions](https://kiro.dev/docs/enterprise/supported-regions/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
