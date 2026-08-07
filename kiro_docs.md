@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 06, 2026*
+*Compiled on August 07, 2026*
 
 ---
 # Get Started
@@ -925,6 +925,56 @@ Each hook file is a standalone JSON file at `.kiro/hooks/<id>.json`. The full sc
 | `hooks[].action.prompt` | Cond. | Prompt text to inject (required when `type` is `"agent"`) |
 | `hooks[].timeout` | No | Timeout in seconds for command actions (default: 60). `0` disables the timeout. Ignored for agent actions. |
 | `hooks[].enabled` | No | Set `false` to skip the hook without deleting it (default: `true`) |
+| `hooks[].confirm` | No | Ask for confirmation before a `Stop` command hook runs. See [Confirmation prompts](#confirmation-prompts). |
+
+#### Confirmation prompts
+
+A command hook on the `Stop` trigger can ask before it runs. Add a `confirm` block with the question to ask and the options to present:
+
+```json
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Submit session results",
+      "trigger": "Stop",
+      "action": { "type": "command", "command": "./submit.sh" },
+      "confirm": {
+        "question": "Submit this session's results?",
+        "options": [
+          { "id": "submit", "label": "Yes, submit", "run": true },
+          { "id": "dismiss", "label": "Not this time", "run": false }
+        ]
+      }
+    }
+  ]
+}
+```
+
+Each option has an `id`, a `label` shown on the button, and a `run` flag that controls whether the hook's command executes when that option is chosen.
+
+##### Dynamic confirm options with `confirmCommand`
+
+To decide at run time whether and what to ask, add an optional `confirmCommand` to the `confirm` block. The command runs before the prompt appears, and its stdout controls the prompt as JSON:
+
+- `{ "skip": true }` suppresses the prompt and skips the hook for this turn
+
+- `{ "question": "...", "options": [...] }` replaces the static question and options
+
+```json
+{
+  "confirm": {
+    "question": "Submit this session's results?",
+    "confirmCommand": "./confirm-options.sh",
+    "options": [
+      { "id": "submit", "label": "Yes, submit", "run": true },
+      { "id": "dismiss", "label": "Not this time", "run": false }
+    ]
+  }
+}
+```
+
+If `confirmCommand` exits non-zero, times out, or prints invalid JSON, the static `question` and `options` are used as a fallback. This makes it useful for prompts that should only appear under certain conditions - for example, a "don't ask again this session" option that writes a marker file and returns `{ "skip": true }` on later turns.
 
 #### File naming and location
 
@@ -966,7 +1016,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. I
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting)** - Common issues and solutions
 
-Page updated:   August 4, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   August 6, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
@@ -1041,6 +1091,14 @@ Alternatively, open the Kiro panel and select the **Open MCP Config** icon.
 
 Save the config file (`Cmd+S`). Servers reconnect automatically. Check the MCP servers tab in the Kiro panel to confirm the server is connected.
 
+#### Installing from an install link
+
+Some server directories and websites offer one-click install links that use the `kiro://` URL scheme. Opening one of these links doesn't change your setup immediately: Kiro shows a confirmation dialog before anything is written to your configuration. The dialog lists the command that will run and its arguments, along with the names of any environment variables or headers - their values stay hidden. Review the details and confirm to add the server, or cancel to leave your configuration unchanged.
+
+**Warning**
+
+Only install MCP servers from sources you trust. See [Security best practices](https://kiro.dev/docs/mcp/security) for guidance on evaluating servers before installing them.
+
 #### Agent configuration
 
 You can also define MCP servers directly in an agent's configuration file. The `mcpServers` field specifies which MCP servers the agent has access to:
@@ -1112,7 +1170,7 @@ If you see "The following tools have large descriptions which may impact agent p
 
 - **[Best practices](https://kiro.dev/docs/mcp/security)** - Security best practices for MCP usage
 
-Page updated:   August 4, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
+Page updated:   August 6, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
 
 ---
 
