@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 11, 2026*
+*Compiled on August 12, 2026*
 
 ---
 # Get Started
@@ -1265,6 +1265,8 @@ If your organization uses AWS Identity Center, your administrator must first ena
 
 Kiro Web uses the same core capabilities as the IDE and CLI. See the Features section for full documentation:
 
+- [Cloud sessions](https://kiro.dev/docs/cloud-sessions) — how the sandbox-backed sessions behind Kiro Web work, and how the IDE and CLI attach to them
+
 - [Steering](https://kiro.dev/docs/steering) — guide the agent with your team's standards and conventions
 
 - [MCP](https://kiro.dev/docs/mcp) — extend the agent with custom tool integrations
@@ -1273,7 +1275,7 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Models](https://kiro.dev/docs/models) — available AI models
 
-Page updated:   August 4, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+Page updated:   August 11, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
