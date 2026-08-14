@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 13, 2026*
+*Compiled on August 14, 2026*
 
 ---
 # Get Started
@@ -511,6 +511,8 @@ Kiro supports providing steering directives via the [AGENTS.md](https://agents.m
 
 You can add AGENTS.md files to the global steering file location (`~/.kiro/steering/`), or to the root folder of your workspace, and they will get picked up by Kiro automatically.
 
+On Kiro CLI, AGENTS.md files are also discovered in subdirectories throughout your workspace. This lets you place an AGENTS.md next to the code it describes — for example, one in `services/api/` and another in `packages/ui/` — and each is loaded as steering context alongside your other steering files.
+
 ### Inclusion modes
 
 Steering files can be configured to load at different times based on your needs. This flexibility helps optimize performance and ensures relevant context is available when needed.
@@ -692,7 +694,7 @@ Only your feedback (the user who created the task) influences the agent's learni
 
 - [Custom Agents](https://kiro.dev/docs/custom-agents) - Build specialized agents with tailored steering
 
-Page updated:   August 4, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
+Page updated:   August 12, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
@@ -708,7 +710,7 @@ Specs or specifications are structured artifacts that formalize the development 
 | Bugfix Specs | ✓ | ✓ | ✓ | — |
 | Quick Spec | ✓ | ✓ | ✓ | — |
 | Parallel task execution | ✓ | ✓ | ✓ | — |
-| [Analyze Requirements](https://kiro.dev/docs/specs/analyze-requirements) | ✓ | — | — | — |
+| [Analyze Requirements](https://kiro.dev/docs/specs/analyze-requirements) | ✓ | ✓ | — | — |
 | [Correctness](https://kiro.dev/docs/specs/correctness) (property-based testing) | ✓ | — | — | — |
 
 With Kiro's specs, you can:
@@ -816,7 +818,7 @@ IDECLIWeb
 
 Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 4, 2026[How Kiro works](https://kiro.dev/docs/how-kiro-works/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 12, 2026[How Kiro works](https://kiro.dev/docs/how-kiro-works/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
@@ -1191,7 +1193,7 @@ kiro-cli
 
 ### CLI-unique features
 
-[Interactive ChatEngage with Kiro through natural conversation in your terminal.](https://kiro.dev/docs/cli/chat/)[Terminal UIRich terminal experience with syntax highlighting, panels, and themes.](https://kiro.dev/docs/cli/terminal-ui/)[Headless ModeRun prompts non-interactively in CI/CD pipelines with API keys.](https://kiro.dev/docs/cli/headless/)[ACPAgent Communication Protocol for programmatic agent interactions.](https://kiro.dev/docs/cli/acp/)[Auto CompleteIntelligent command completion with context awareness.](https://kiro.dev/docs/cli/autocomplete/)[Code IntelligenceLanguage-aware code understanding and navigation.](https://kiro.dev/docs/tools/code-intelligence/)
+[Interactive ChatEngage with Kiro through natural conversation in your terminal.](https://kiro.dev/docs/cli/chat/)[Terminal UIRich terminal experience with syntax highlighting, panels, and themes.](https://kiro.dev/docs/cli/terminal-ui/)[Headless ModeRun prompts non-interactively in CI/CD pipelines with API keys.](https://kiro.dev/docs/cli/headless/)[Voice ModeDictate prompts hands-free with local Whisper speech-to-text.](https://kiro.dev/docs/cli/voice/)[ACPAgent Communication Protocol for programmatic agent interactions.](https://kiro.dev/docs/cli/acp/)[Auto CompleteIntelligent command completion with context awareness.](https://kiro.dev/docs/cli/autocomplete/)[Code IntelligenceLanguage-aware code understanding and navigation.](https://kiro.dev/docs/tools/code-intelligence/)
 
 ### Shared capabilities
 
@@ -1231,7 +1233,7 @@ The Kiro CLI is ideal for:
 
 - **Workflow Optimization**: Automate repetitive tasks with smart hooks
 
-Page updated:   August 4, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in 3.0](https://kiro.dev/docs/cli/v3/)
+Page updated:   August 11, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in 3.0](https://kiro.dev/docs/cli/v3/)
 
 ---
 
