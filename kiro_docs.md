@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 14, 2026*
+*Compiled on August 15, 2026*
 
 ---
 # Get Started
@@ -1253,7 +1253,7 @@ Kiro Web works in two modes. By default, you collaborate with the agent interact
 
 ### AWS Identity Center
 
-If your organization uses AWS Identity Center, your administrator must first enable Kiro Web from **Settings > Kiro Settings** in the AWS account where Kiro is configured. Kiro Web is available in **US East (N. Virginia) `us-east-1`** only during the preview.
+If your organization uses AWS Identity Center, your administrator must first enable Cloud Sessions by toggling on **Cloud Sessions (Preview)** in **Settings > Kiro Settings**, in the AWS account where Kiro is configured. See [AWS Identity Center](https://kiro.dev/docs/web/identity-center) for the full steps. Kiro Web is available in **US East (N. Virginia) `us-east-1`** only during the preview.
 
 ### Get started
 
@@ -1277,7 +1277,7 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Models](https://kiro.dev/docs/models) — available AI models
 
-Page updated:   August 11, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+Page updated:   August 14, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
