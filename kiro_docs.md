@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 18, 2026*
+*Compiled on August 19, 2026*
 
 ---
 # Get Started
@@ -511,7 +511,7 @@ Kiro supports providing steering directives via the [AGENTS.md](https://agents.m
 
 You can add AGENTS.md files to the global steering file location (`~/.kiro/steering/`), or to the root folder of your workspace, and they will get picked up by Kiro automatically.
 
-On Kiro CLI, AGENTS.md files are also discovered in subdirectories throughout your workspace. This lets you place an AGENTS.md next to the code it describes — for example, one in `services/api/` and another in `packages/ui/` — and each is loaded as steering context alongside your other steering files.
+AGENTS.md files are also discovered in subdirectories throughout your workspace. This lets you place an AGENTS.md next to the code it describes — for example, one in `services/api/` and another in `packages/ui/` — and each is loaded as steering context alongside your other steering files.
 
 ### Inclusion modes
 
@@ -694,7 +694,7 @@ Only your feedback (the user who created the task) influences the agent's learni
 
 - [Custom Agents](https://kiro.dev/docs/custom-agents) - Build specialized agents with tailored steering
 
-Page updated:   August 12, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
+Page updated:   August 18, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
@@ -1261,7 +1261,7 @@ If your organization uses AWS Identity Center, your administrator must first ena
 
 ### Features
 
-[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[SpecsPlan features, bugs, and quick plans — then have the agent implement and open a PR](https://kiro.dev/docs/specs/)[AutomationsSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)
+[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[SpecsPlan features, bugs, and quick plans — then have the agent implement and open a PR](https://kiro.dev/docs/specs/)[AutomationsSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[MemorySee what the agent learns from your work over time](https://kiro.dev/docs/web/memory/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)
 
 ### Shared capabilities
 
@@ -1277,7 +1277,7 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Models](https://kiro.dev/docs/models) — available AI models
 
-Page updated:   August 14, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+Page updated:   August 18, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
