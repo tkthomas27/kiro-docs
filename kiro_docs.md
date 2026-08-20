@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 19, 2026*
+*Compiled on August 20, 2026*
 
 ---
 # Get Started
@@ -49,7 +49,7 @@ Each surface adds its own way of working on top: the IDE brings editor integrati
 
 ### Learn more
 
-[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   August 4, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   August 13, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
@@ -105,7 +105,9 @@ From the welcome page, open a folder to start your first session. See [Your firs
 
 IDECLIWeb
 
-Kiro IDE auto-updates when a new version is available. You'll see a notification to restart and apply the update.
+Kiro IDE downloads updates automatically in the background. When an update is ready, you'll see a notification to restart and apply it.
+
+To check manually, open the **Kiro** menu and select **Check for Updates...** On Windows or Linux, open the Command Palette (`Ctrl + Shift + P`) and run `Kiro: Check for Updates`.
 
 ### Downgrade to a previous version
 
@@ -180,7 +182,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide) — environment setup per language
 
-Page updated:   August 4, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   August 19, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -1233,7 +1235,7 @@ The Kiro CLI is ideal for:
 
 - **Workflow Optimization**: Automate repetitive tasks with smart hooks
 
-Page updated:   August 11, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in 3.0](https://kiro.dev/docs/cli/v3/)
+Page updated:   August 18, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in 3.0](https://kiro.dev/docs/cli/v3/)
 
 ---
 
