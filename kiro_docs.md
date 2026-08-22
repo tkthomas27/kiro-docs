@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 21, 2026*
+*Compiled on August 22, 2026*
 
 ---
 # Get Started
@@ -26,7 +26,7 @@ Pick the surface that fits your workflow. Your `.kiro/` configuration is shared 
 | Fix a bug with root cause analysis and regression prevention | [Bugfix Specs](https://kiro.dev/docs/specs/bugfix-specs/) |
 | Chat and build iteratively without a plan | [Chat](https://kiro.dev/docs/ide/chat/) (IDE) or start a session (CLI) |
 | Enforce project standards automatically | [Steering](https://kiro.dev/docs/steering/) |
-| Automate actions on file save, tool use, or task completion | [Hooks](https://kiro.dev/docs/hooks/) |
+| Automate actions on agent file changes, tool use, or task completion | [Hooks](https://kiro.dev/docs/hooks/) |
 | Connect external tools and APIs | [MCP](https://kiro.dev/docs/mcp/) |
 | Control what the agent can access | [Permissions](https://kiro.dev/docs/permissions/) |
 | Create specialized agents for specific workflows | [Custom agents](https://kiro.dev/docs/custom-agents/) |
@@ -49,7 +49,7 @@ Each surface adds its own way of working on top: the IDE brings editor integrati
 
 ### Learn more
 
-[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   August 4, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   August 21, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
@@ -314,7 +314,7 @@ Learn more about specs in the [Specs documentation](https://kiro.dev/docs/specs/
 
 ### Automate workflows with hooks
 
-Agent hooks eliminate manual work by automatically executing predefined actions when specific events occur - file changes, manual triggers, or pattern matches.
+Agent hooks eliminate manual work by automatically executing predefined actions when specific agent events occur, such as file changes, tool use, or task execution.
 
 IDECLIWebMobile
 
@@ -334,14 +334,14 @@ IDECLIWebMobile
 
     - Describe what you want automated in natural language
 
-    - Example: "When I save a React component file, automatically create or update its corresponding test file"
+    - Example: "When the agent saves a React component file, automatically create or update its corresponding test file"
 
 1. **Configure hook settings**:
 
 
 
 
-    - **Event type**: Choose when the hook triggers - file events (created, saved, deleted), prompt and agent lifecycle events, spec task events, or manual trigger
+    - **Event type**: Choose when the hook triggers - agent file events (created, saved, deleted), prompt and agent lifecycle events, or spec task events
 
     - **File pattern**: Specify which files should trigger the hook (e.g., `src/**/*.tsx`)
 
@@ -403,7 +403,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   August 4, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   August 21, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -826,7 +826,7 @@ Go deeper into Kiro's Spec system with these guides:
 
 # Agent Hooks
 
-Hooks run shell commands or agent prompts automatically when specific events happen in your session - a file is saved, a tool is invoked, or a task completes. You define the trigger and the action; Kiro handles the execution.
+Hooks run shell commands or agent prompts automatically when specific events happen in your session - the agent modifies a file, invokes a tool, or completes a task. You define the trigger and the action; Kiro handles the execution.
 
 | Capability | IDE | CLI | Web | Mobile |
 | --- | --- | --- | --- | --- |
@@ -837,7 +837,7 @@ Hooks run shell commands or agent prompts automatically when specific events hap
 
 ### What you can do with hooks
 
-- **Enforce standards** - run linters, formatters, or type checks automatically on file save
+- **Enforce standards** - run linters, formatters, or type checks automatically after agent file changes
 
 - **Gate dangerous operations** - block tool execution unless preconditions are met (PreToolUse)
 
@@ -849,7 +849,7 @@ Hooks run shell commands or agent prompts automatically when specific events hap
 
 ### Quick example
 
-A `PostFileSave` hook that runs ESLint whenever you save a TypeScript file:
+A `PostFileSave` hook that runs ESLint whenever the agent saves or edits a TypeScript file:
 
 ```json
 {
@@ -879,9 +879,9 @@ When the trigger event fires, Kiro checks the matcher. If it matches (or no matc
 
 | Trigger | When it fires | Can block? |
 | --- | --- | --- |
-| `PostFileSave` | After a file is saved | No |
-| `PostFileCreate` | After a new file is created | No |
-| `PostFileDelete` | After a file is deleted | No |
+| `PostFileSave` | After the agent saves or edits a file | No |
+| `PostFileCreate` | After the agent creates a new file | No |
+| `PostFileDelete` | After the agent deletes a file | No |
 | `PreToolUse` | Before a tool is about to execute | Yes |
 | `PostToolUse` | After a tool has executed | No |
 | `UserPromptSubmit` | When a message is sent to the agent | Yes |
@@ -892,7 +892,11 @@ When the trigger event fires, Kiro checks the matcher. If it matches (or no matc
 
 **Info**
 
-Manual hooks from earlier IDE versions have been replaced by manual steering files. See [Steering](https://kiro.dev/docs/steering/#manual-inclusion) for details.
+File triggers respond only to changes made by the agent. Saving, creating, or deleting a file manually in the editor does not trigger `PostFileSave`, `PostFileCreate`, or `PostFileDelete`.
+
+**Info**
+
+Existing manual Hooks from IDE 0.x continue to appear as legacy Hooks and can still be run from the Agent Hooks panel. To create a new on-demand workflow, create a [manually included Steering file](https://kiro.dev/docs/steering/#manual-inclusion) instead.
 
 See [Hook Triggers](https://kiro.dev/docs/hooks/types/) for detailed descriptions, matcher patterns, and use cases for each trigger type.
 
@@ -1020,7 +1024,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. I
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)** - Common issues and solutions
 
-Page updated:   August 4, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   August 21, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
