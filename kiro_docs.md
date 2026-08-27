@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 26, 2026*
+*Compiled on August 27, 2026*
 
 ---
 # Get Started
@@ -820,7 +820,7 @@ IDECLIWeb
 
 Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 4, 2026[How Kiro works](https://kiro.dev/docs/how-kiro-works/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 27, 2026[How Kiro works](https://kiro.dev/docs/how-kiro-works/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
