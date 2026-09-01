@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on August 31, 2026*
+*Compiled on September 01, 2026*
 
 ---
 # Get Started
