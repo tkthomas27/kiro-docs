@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on September 02, 2026*
+*Compiled on September 03, 2026*
 
 ---
 # Get Started
@@ -43,13 +43,13 @@ Pick the surface that fits your workflow. Your `.kiro/` configuration is shared 
 
 ### One agent, every surface
 
-Every Kiro surface is a front end to the same unified agent harness. Your steering files, permissions, hooks, MCP servers, and custom agents work identically whether you're in the IDE, CLI, or Web — start a spec in the IDE, continue it from the CLI, hand off implementation to the Web agent, and everything stays in sync through `.kiro/`.
+Every Kiro surface is a front end to the same unified agent harness. Shared project configuration travels with your repository through `.kiro/`, with surface-specific behavior for permissions and primary-agent selection. Start a spec in the IDE, continue it from the CLI, hand off implementation to the Web agent, and keep the same project context across surfaces.
 
 Each surface adds its own way of working on top: the IDE brings editor integration, the CLI brings terminal-native and headless workflows, and the Web brings zero-setup sandboxed sessions. [How Kiro works](https://kiro.dev/docs/how-kiro-works/) explains the architecture, the agent loop, and where every capability plugs in.
 
 ### Learn more
 
-[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   August 21, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   September 2, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
@@ -182,7 +182,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   August 4, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   September 2, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -403,7 +403,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   August 21, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   September 2, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -417,9 +417,12 @@ Steering gives Kiro persistent knowledge about your project through markdown fil
 | --- | --- | --- | --- | --- |
 | Workspace steering (`.kiro/steering/`) | ✓ | ✓ | ✓ | ✓ |
 | Global steering (`~/.kiro/steering/`) | ✓ | ✓ | — | — |
+| Cloud steering managed in Web settings | — | — | ✓ | — |
 | Generate foundation files via UI | ✓ | — | — | — |
 | Inclusion modes (always, fileMatch, manual) | ✓ | ✓ | ✓ | ✓ |
 | AGENTS.md support | ✓ | ✓ | ✓ | ✓ |
+
+On Web, "Global steering" refers to your local `~/.kiro/steering/` directory, which the cloud sandbox cannot read. To reuse personal steering across cloud sessions, upload it through [Configuration Sync](https://kiro.dev/docs/web/cloud-configuration/); the cloud copy then applies to every cloud session.
 
 ### Key benefits
 
@@ -696,7 +699,7 @@ Only your feedback (the user who created the task) influences the agent's learni
 
 - [Custom Agents](https://kiro.dev/docs/custom-agents/) - Build specialized agents with tailored steering
 
-Page updated:   August 4, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
+Page updated:   September 2, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
@@ -830,10 +833,10 @@ Hooks run shell commands or agent prompts automatically when specific events hap
 
 | Capability | IDE | CLI | Web | Mobile |
 | --- | --- | --- | --- | --- |
-| Event-driven hooks | ✓ | ✓ | — | — |
-| Shell command actions | ✓ | ✓ | — | — |
-| Agent prompt actions | ✓ | ✓ | — | — |
-| Hook creation via chat | ✓ | ✓ | — | — |
+| Event-driven hooks | ✓ | ✓ | ✓ | — |
+| Shell command actions | ✓ | ✓ | ✓ | — |
+| Agent prompt actions | ✓ | ✓ | ✓ | — |
+| Create Hooks by asking the agent in chat | ✓ | ✓ | ✓ | — |
 
 ### What you can do with hooks
 
@@ -877,18 +880,20 @@ When the trigger event fires, Kiro checks the matcher. If it matches (or no matc
 
 #### Available triggers
 
-| Trigger | When it fires | Can block? |
-| --- | --- | --- |
-| `PostFileSave` | After the agent saves or edits a file | No |
-| `PostFileCreate` | After the agent creates a new file | No |
-| `PostFileDelete` | After the agent deletes a file | No |
-| `PreToolUse` | Before a tool is about to execute | Yes |
-| `PostToolUse` | After a tool has executed | No |
-| `UserPromptSubmit` | When a message is sent to the agent | Yes |
-| `SessionStart` | When a new session begins | No |
-| `Stop` | When the agent finishes responding | No |
-| `PreTaskExec` | Before a spec task starts | Yes |
-| `PostTaskExec` | After a spec task completes | No |
+| Trigger | When it fires | IDE | CLI | Web | Can block? |
+| --- | --- | --- | --- | --- | --- |
+| [Prompt Submit](https://kiro.dev/docs/hooks/types/#prompt-submit) | When a message is sent to the agent | ✓ | ✓ | — | Yes |
+| [Agent Stop](https://kiro.dev/docs/hooks/types/#agent-stop) | When the agent finishes responding | ✓ | ✓ | — | No |
+| [Session Start](https://kiro.dev/docs/hooks/types/#session-start-ide-only) | When a new session begins (IDE) | ✓ | — | — | No |
+| [Agent Spawn](https://kiro.dev/docs/hooks/types/#agent-spawn-cli-only) | When the agent is activated (CLI) | — | ✓ | — | No |
+| [Pre Tool Use](https://kiro.dev/docs/hooks/types/#pre-tool-use) | Before a tool is about to execute | ✓ | ✓ | — | Yes |
+| [Post Tool Use](https://kiro.dev/docs/hooks/types/#post-tool-use) | After a tool has executed | ✓ | ✓ | — | No |
+| [File Create](https://kiro.dev/docs/hooks/types/#file-create) | After the agent creates a new file | ✓ | — | — | No |
+| [File Save](https://kiro.dev/docs/hooks/types/#file-save) | After the agent saves or edits a file | ✓ | — | — | No |
+| [File Delete](https://kiro.dev/docs/hooks/types/#file-delete) | After the agent deletes a file | ✓ | — | — | No |
+| [Pre Task Execution](https://kiro.dev/docs/hooks/types/#pre-task-execution-ide-only) | Before a spec task starts | ✓ | — | — | Yes |
+| [Post Task Execution](https://kiro.dev/docs/hooks/types/#post-task-execution-ide-only) | After a spec task completes | ✓ | — | — | No |
+| [Legacy Manual Hook](https://kiro.dev/docs/hooks/types/#legacy-manual-hooks-ide-only) | Legacy IDE 0.x hooks, run manually | Legacy only | — | — | No |
 
 **Info**
 
@@ -1024,7 +1029,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. I
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)** - Common issues and solutions
 
-Page updated:   August 21, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   September 2, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
@@ -1035,8 +1040,8 @@ Model Context Protocol (MCP) extends Kiro's capabilities by connecting to specia
 | Capability | IDE | CLI | Web | Mobile |
 | --- | --- | --- | --- | --- |
 | Local (stdio) MCP servers | ✓ | ✓ | ✓ | — |
-| Remote (HTTP/SSE) MCP servers | ✓ | ✓ | — | — |
-| MCP config file (JSON) | ✓ | ✓ | — | — |
+| Remote (HTTP/SSE) MCP servers | ✓ | ✓ | ✓ | — |
+| MCP config file (JSON) | ✓ | ✓ | ✓ | — |
 | Server-provided prompts and resources | ✓ | ✓ | ✓ | — |
 
 ### What is MCP?
@@ -1178,7 +1183,7 @@ If you see "The following tools have large descriptions which may impact agent p
 
 - **[Best practices](https://kiro.dev/docs/mcp/security/)** - Security best practices for MCP usage
 
-Page updated:   August 4, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
+Page updated:   September 2, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
 
 ---
 
@@ -1245,29 +1250,37 @@ Page updated:   August 4, 2026[0.x reference](https://kiro.dev/docs/ide/0x-refer
 
 # Web Interface
 
-**Preview**Kiro on the web is currently in preview for Kiro Pro, Pro+, Pro Max, and Power users. Available in the US region only during the preview. Features and documentation may change as we improve the product.
+Kiro Web is a browser-based development agent that helps you build software through conversation. Chat with the agent to discuss approaches, write code, and open pull requests or merge requests from [app.kiro.dev](https://app.kiro.dev).
 
-Kiro Web (Preview) is a browser-based development agent that helps you build software through conversation. Chat with the agent to discuss approaches, write code, and open pull requests — all from [app.kiro.dev](https://app.kiro.dev).
+Kiro Web is available on Pro, Pro+, Pro Max, and Power plans.
 
-Kiro Web works in two modes. By default, you collaborate with the agent interactively — iterating on a problem together and asking it to open a pull request when you're ready. When you need the agent to own the outcome end-to-end, toggle on [autonomous mode](https://kiro.dev/docs/web/autonomous-mode/) and let it plan, implement, and open a PR on its own.
+Kiro Web gives you three ways to work:
+
+- Use the default mode to collaborate with the agent interactively and iterate on a problem together.
+
+- Use [Spec mode](https://kiro.dev/docs/specs/) to shape requirements, a technical design, and an implementation plan before execution starts.
+
+- Use [autonomous mode](https://kiro.dev/docs/web/autonomous-mode/) to delegate an outcome from planning through implementation and a pull request or merge request.
+
+In every workflow, you review the result before it reaches your repository's default branch. Kiro never merges changes automatically.
 
 ### Prerequisites
 
-- A paid Kiro subscription (Pro or higher)
+- A Pro, Pro+, Pro Max, or Power subscription
 
-- A [GitHub account connected](https://kiro.dev/docs/web/github/) to Kiro
+- A [GitHub or GitLab repository provider connected](https://kiro.dev/docs/web/setup/) to Kiro
 
 ### AWS Identity Center
 
-If your organization uses AWS Identity Center, your administrator must first enable Cloud Sessions by toggling on **Cloud Sessions (Preview)** in **Settings > Kiro Settings**, in the AWS account where Kiro is configured. See [AWS Identity Center](https://kiro.dev/docs/web/identity-center/) for the full steps. Kiro Web is available in **US East (N. Virginia) `us-east-1`** only during the preview.
+If your organization uses AWS Identity Center, your administrator must first enable Cloud Sessions by toggling on **Cloud Sessions** in **Settings > Kiro Settings**, in the AWS account where Kiro is configured. See [AWS Identity Center](https://kiro.dev/docs/web/identity-center/) for the full steps. Kiro Web is available in **US East (N. Virginia) `us-east-1`** only.
 
 ### Get started
 
-[GitHub integrationConnect GitHub and configure access](https://kiro.dev/docs/web/github/)[Working with the agentChat, iterate, and open pull requests](https://kiro.dev/docs/web/using-the-agent/)
+[Repository setupConnect GitHub or GitLab and configure access](https://kiro.dev/docs/web/setup/)[Working with the agentChat, iterate, and open pull requests](https://kiro.dev/docs/web/using-the-agent/)
 
 ### Features
 
-[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[SpecsPlan features, bugs, and quick plans — then have the agent implement and open a PR](https://kiro.dev/docs/specs/)[AutomationsSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[MemorySee what the agent learns from your work over time](https://kiro.dev/docs/web/memory/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)
+[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[SpecsShape requirements, a technical design, and an implementation plan, then have the agent implement and open a PR](https://kiro.dev/docs/specs/)[AutomationsSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[MemorySee what the agent learns from your work over time](https://kiro.dev/docs/web/memory/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)
 
 ### Shared capabilities
 
@@ -1283,7 +1296,7 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Models](https://kiro.dev/docs/models/) — available AI models
 
-Page updated:   August 4, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+Page updated:   September 2, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
