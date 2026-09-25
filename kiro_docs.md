@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on September 24, 2026*
+*Compiled on September 25, 2026*
 
 ---
 # Get Started
@@ -492,8 +492,6 @@ IDECLIWeb
 
 1. Use natural language to describe your requirements
 
-1. Optionally, use the **Refine** button to have Kiro refine your requirements
-
 Once created, steering files become immediately available across all Kiro interactions.
 
 ### Steering with custom agents
@@ -645,7 +643,7 @@ In addition to persistent steering files, you can steer Kiro in real time during
 
 **Info**
 
-On Kiro Web, the agent asks clarifying questions upfront in [autonomous mode](https://kiro.dev/docs/web/autonomous-mode/) - your answers act as steering for that task. In the default mode, you can steer continuously as you iterate together.
+On Kiro Web, you can steer autonomous-mode tasks the same way — direction you give during the task acts as steering for it.
 
 ### Teaching through code reviews
 
@@ -699,7 +697,7 @@ Only your feedback (the user who created the task) influences the agent's learni
 
 - [Custom Agents](https://kiro.dev/docs/custom-agents/) - Build specialized agents with tailored steering
 
-Page updated:   September 2, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
+Page updated:   September 25, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
