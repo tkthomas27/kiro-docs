@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on September 30, 2026*
+*Compiled on October 01, 2026*
 
 ---
 # Get Started
@@ -876,32 +876,9 @@ When the trigger event fires, Kiro checks the matcher. If it matches (or no matc
 
 - **Agent actions** inject a prompt into the current conversation, steering the agent's behavior.
 
-#### Available triggers
+#### Choose a trigger
 
-| Trigger | When it fires | IDE | CLI | Web | Can block? |
-| --- | --- | --- | --- | --- | --- |
-| [Prompt Submit](https://kiro.dev/docs/hooks/types/#prompt-submit) | When a message is sent to the agent | ✓ | ✓ | — | Yes |
-| [Agent Stop](https://kiro.dev/docs/hooks/types/#agent-stop) | When the agent finishes responding | ✓ | ✓ | — | No |
-| [Session Start](https://kiro.dev/docs/hooks/types/#session-start-ide-only) | When a new session begins (IDE) | ✓ | — | — | No |
-| [Agent Spawn](https://kiro.dev/docs/hooks/types/#agent-spawn-cli-only) | When the agent is activated (CLI) | — | ✓ | — | No |
-| [Pre Tool Use](https://kiro.dev/docs/hooks/types/#pre-tool-use) | Before a tool is about to execute | ✓ | ✓ | — | Yes |
-| [Post Tool Use](https://kiro.dev/docs/hooks/types/#post-tool-use) | After a tool has executed | ✓ | ✓ | — | No |
-| [File Create](https://kiro.dev/docs/hooks/types/#file-create) | After the agent creates a new file | ✓ | — | — | No |
-| [File Save](https://kiro.dev/docs/hooks/types/#file-save) | After the agent saves or edits a file | ✓ | — | — | No |
-| [File Delete](https://kiro.dev/docs/hooks/types/#file-delete) | After the agent deletes a file | ✓ | — | — | No |
-| [Pre Task Execution](https://kiro.dev/docs/hooks/types/#pre-task-execution-ide-only) | Before a spec task starts | ✓ | — | — | Yes |
-| [Post Task Execution](https://kiro.dev/docs/hooks/types/#post-task-execution-ide-only) | After a spec task completes | ✓ | — | — | No |
-| [Legacy Manual Hook](https://kiro.dev/docs/hooks/types/#legacy-manual-hooks-ide-only) | Legacy IDE 0.x hooks, run manually | Legacy only | — | — | No |
-
-**Info**
-
-File triggers respond only to changes made by the agent. Saving, creating, or deleting a file manually in the editor does not trigger `PostFileSave`, `PostFileCreate`, or `PostFileDelete`.
-
-**Info**
-
-Existing manual Hooks from IDE 0.x continue to appear as legacy Hooks and can still be run from the Agent Hooks panel. To create a new on-demand workflow, create a [manually included Steering file](https://kiro.dev/docs/steering/#manual-inclusion) instead.
-
-See [Hook Triggers](https://kiro.dev/docs/hooks/types/) for detailed descriptions, matcher patterns, and use cases for each trigger type.
+Use [Hook types](https://kiro.dev/docs/hooks/types/) to choose the trigger for your task. It is the authoritative trigger list and documents surface availability and trigger-specific behavior.
 
 ### Hook file schema
 
@@ -929,7 +906,7 @@ Each hook file is a standalone JSON file at `.kiro/hooks/<id>.json`. The full sc
 | `hooks` | Yes | Array of hook definitions |
 | `hooks[].name` | Yes | Human-readable identifier for the hook |
 | `hooks[].description` | No | Documentation only |
-| `hooks[].trigger` | Yes | Event that fires the hook (PascalCase - see [triggers table](#available-triggers)) |
+| `hooks[].trigger` | Yes | Event that fires the hook (PascalCase - see [Hook types](https://kiro.dev/docs/hooks/types/)) |
 | `hooks[].matcher` | No | Regex pattern to filter which events fire this hook. For `PreToolUse`/`PostToolUse`, matches tool name. For file events, matches file path. Defaults to always-match. |
 | `hooks[].action.type` | Yes | `"command"` (shell command) or `"agent"` (inject prompt) |
 | `hooks[].action.command` | Cond. | Shell command to run (required when `type` is `"command"`) |
@@ -1011,7 +988,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. I
 
 - **From IDE 0.x** - Hooks moved from the previous format to standalone JSON files with PascalCase trigger names. See [What's new in IDE 1.0: Hooks](https://kiro.dev/docs/ide/whats-new-v1/hooks/) for the trigger mapping.
 
-- **From CLI 2.x** - Hooks moved from embedded fields in agent config to standalone files. Run `kiro-cli agent migrate` to auto-convert, or see [CLI 3.0 Hooks migration](https://kiro.dev/docs/cli/v3/hooks-migration/) for the manual mapping.
+- **From CLI 2.x** - Hooks moved from embedded fields in agent config to standalone files. Run `kiro-cli agent migrate` to auto-convert, or see [CLI 3.0 Hooks migration](https://kiro.dev/docs/cli/v3/hooks-migration/) for the manual mapping. For the legacy embedded format and trigger namespace, see the [CLI 2.x reference](https://kiro.dev/docs/cli/2x-reference/#hooks).
 
 ### Next steps
 
@@ -1027,7 +1004,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. I
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)** - Common issues and solutions
 
-Page updated:   September 2, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   September 30, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
