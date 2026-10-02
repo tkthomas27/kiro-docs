@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 01, 2026*
+*Compiled on October 02, 2026*
 
 ---
 # Get Started
@@ -28,6 +28,7 @@ Pick the surface that fits your workflow. Your `.kiro/` configuration is shared 
 | Enforce project standards automatically | [Steering](https://kiro.dev/docs/steering/) |
 | Automate actions on agent file changes, tool use, or task completion | [Hooks](https://kiro.dev/docs/hooks/) |
 | Connect external tools and APIs | [MCP](https://kiro.dev/docs/mcp/) |
+| Use Kiro in another editor or client | [ACP integrations](https://kiro.dev/docs/acp/) |
 | Control what the agent can access | [Permissions](https://kiro.dev/docs/permissions/) |
 | Create specialized agents for specific workflows | [Custom agents](https://kiro.dev/docs/custom-agents/) |
 | Extend the agent with reusable instruction packages | [Skills](https://kiro.dev/docs/skills/) |
@@ -49,7 +50,7 @@ Each surface adds its own way of working on top: the IDE brings editor integrati
 
 ### Learn more
 
-[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   September 2, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   October 1, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
@@ -182,7 +183,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   September 16, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   October 1, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -403,7 +404,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   September 2, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   October 1, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -821,7 +822,7 @@ IDECLIWeb
 
 Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 27, 2026[How Kiro works](https://kiro.dev/docs/how-kiro-works/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 27, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
@@ -1219,7 +1220,7 @@ The Kiro CLI is ideal for:
 
 - **Workflow Optimization**: Automate repetitive tasks with smart hooks
 
-Page updated:   August 4, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in 3.0](https://kiro.dev/docs/cli/v3/)
+Page updated:   August 4, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in V3](https://kiro.dev/docs/cli/v3/)
 
 ---
 
@@ -1243,11 +1244,9 @@ In every workflow, you review the result before it reaches your repository's def
 
 - A Pro, Pro+, Pro Max, or Power subscription
 
-- A [GitHub or GitLab repository provider connected](https://kiro.dev/docs/web/setup/) to Kiro
-
 ### AWS Identity Center
 
-If your organization uses AWS Identity Center, your administrator must first enable Cloud Sessions by toggling on **Cloud Sessions** in **Settings > Kiro Settings**, in the AWS account where Kiro is configured. See [AWS Identity Center](https://kiro.dev/docs/web/identity-center/) for the full steps. Kiro Web is available in **US East (N. Virginia) `us-east-1`** only.
+If your organization uses AWS Identity Center, your administrator must first enable Cloud Sessions by toggling on **Cloud Sessions** in **Settings > Kiro Settings**, in the AWS account where Kiro is configured. See [AWS Identity Center](https://kiro.dev/docs/web/identity-center/) for the full steps. Organizations that use Okta or Microsoft Entra ID can also use Kiro Web after an administrator enables **Cloud Sessions** (see [Cloud sessions prerequisites](https://kiro.dev/docs/cloud-sessions/#prerequisites)). Kiro Web is available in **US East (N. Virginia) `us-east-1`** only.
 
 ### Get started
 
@@ -1271,7 +1270,7 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Models](https://kiro.dev/docs/models/) — available AI models
 
-Page updated:   September 2, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+Page updated:   October 1, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
