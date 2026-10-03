@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 02, 2026*
+*Compiled on October 03, 2026*
 
 ---
 # Get Started
@@ -404,7 +404,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   October 1, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   October 2, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -418,9 +418,9 @@ Steering gives Kiro persistent knowledge about your project through markdown fil
 | --- | --- | --- | --- | --- |
 | Workspace steering (`.kiro/steering/`) | ✓ | ✓ | ✓ | ✓ |
 | Global steering (`~/.kiro/steering/`) | ✓ | ✓ | — | — |
-| Cloud steering managed in Web settings | — | — | ✓ | — |
+| Upload local steering to [cloud configuration](https://kiro.dev/docs/web/cloud-configuration/) | Opt-in | Opt-in | ✓ | — |
 | Generate foundation files via UI | ✓ | — | — | — |
-| Inclusion modes (always, fileMatch, manual) | ✓ | ✓ | ✓ | ✓ |
+| Inclusion modes | ✓ | V3: full; V1/V2: partial | ✓ | ✓ |
 | AGENTS.md support | ✓ | ✓ | ✓ | ✓ |
 
 On Web, "Global steering" refers to your local `~/.kiro/steering/` directory, which the cloud sandbox cannot read. To reuse personal steering across cloud sessions, upload it through [Configuration Sync](https://kiro.dev/docs/web/cloud-configuration/); the cloud copy then applies to every cloud session.
@@ -614,23 +614,38 @@ Auto-inclusion steering files also appear as slash commands in chat. Type `/` fo
 
 **Info**
 
-On Kiro CLI, inclusion modes are not currently supported. All steering files in the `.kiro/steering/` directory are loaded automatically.
+Kiro CLI V3 supports all four inclusion modes: `always`, `fileMatch`, `manual`, and `auto`. In V1/V2, files marked `always` load automatically. Files marked `fileMatch` or `manual` are excluded from automatic loading, and those engines do not provide V3's complete matching and activation behavior.
 
 ### File references
 
-Link to live workspace files to keep steering current:
+Link to live workspace files to keep Steering current. Whole-file references work across surfaces:
 
 ```markdown
 #[[file:<relative_file_name>]]
 ```
 
+CLI V3 also supports one line, an inclusive line range, or a one-level folder listing:
+
+```markdown
+# One line or an inclusive line range
+#[[file:<relative_file_name>:<line>]]
+#[[file:<relative_file_name>:<start>-<end>]]
+
+# One-level folder listing
+#[[folder:<relative_folder_name>]]
+```
+
 Examples:
 
-- API specs: `#[[file:api/openapi.yaml]]`
+- API specs on any surface: `#[[file:api/openapi.yaml]]`
 
-- Component patterns: `#[[file:components/ui/button.tsx]]`
+- Selected rules in CLI V3: `#[[file:docs/api-guidelines.md:12-28]]`
 
-- Config templates: `#[[file:.env.example]]`
+- Component patterns on any surface: `#[[file:components/ui/button.tsx]]`
+
+- Config directory in CLI V3: `#[[folder:config]]`
+
+In CLI V3, relative paths resolve from the workspace root for workspace Steering, from `~/.kiro/steering/` for global Steering, and from the containing folder for an `AGENTS.md` file. References follow the session's file-read permissions and ignore rules. If a reference cannot be resolved, Kiro leaves a visible unresolved-reference marker in the Steering content instead of silently dropping the document.
 
 ### Steering during a session
 
@@ -698,7 +713,7 @@ Only your feedback (the user who created the task) influences the agent's learni
 
 - [Custom Agents](https://kiro.dev/docs/custom-agents/) - Build specialized agents with tailored steering
 
-Page updated:   September 25, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
+Page updated:   October 2, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
@@ -822,7 +837,7 @@ IDECLIWeb
 
 Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   August 27, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   October 2, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
@@ -1159,7 +1174,7 @@ If you see "The following tools have large descriptions which may impact agent p
 
 - **[Best practices](https://kiro.dev/docs/mcp/security/)** - Security best practices for MCP usage
 
-Page updated:   September 2, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
+Page updated:   October 2, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
 
 ---
 
@@ -1262,6 +1277,8 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Cloud sessions](https://kiro.dev/docs/cloud-sessions/) — how the sandbox-backed sessions behind Kiro Web work, and how the IDE and CLI attach to them
 
+- [Cloud configuration](https://kiro.dev/docs/web/cloud-configuration/) — bring your personal `.kiro` steering, agents, skills, hooks, Powers, and MCP servers into every cloud session
+
 - [Steering](https://kiro.dev/docs/steering/) — guide the agent with your team's standards and conventions
 
 - [MCP](https://kiro.dev/docs/mcp/) — extend the agent with custom tool integrations
@@ -1270,7 +1287,7 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Models](https://kiro.dev/docs/models/) — available AI models
 
-Page updated:   October 1, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+Page updated:   October 2, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
