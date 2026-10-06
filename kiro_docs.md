@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 05, 2026*
+*Compiled on October 06, 2026*
 
 ---
 # Get Started
@@ -183,7 +183,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   October 1, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   October 5, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -624,7 +624,7 @@ Link to live workspace files to keep Steering current. Whole-file references wor
 #[[file:<relative_file_name>]]
 ```
 
-CLI V3 also supports one line, an inclusive line range, or a one-level folder listing:
+Kiro IDE and CLI V3 also support one line, an inclusive line range, or a one-level folder listing:
 
 ```markdown
 # One line or an inclusive line range
@@ -639,13 +639,13 @@ Examples:
 
 - API specs on any surface: `#[[file:api/openapi.yaml]]`
 
-- Selected rules in CLI V3: `#[[file:docs/api-guidelines.md:12-28]]`
+- Selected rules: `#[[file:docs/api-guidelines.md:12-28]]`
 
 - Component patterns on any surface: `#[[file:components/ui/button.tsx]]`
 
-- Config directory in CLI V3: `#[[folder:config]]`
+- Config directory: `#[[folder:config]]`
 
-In CLI V3, relative paths resolve from the workspace root for workspace Steering, from `~/.kiro/steering/` for global Steering, and from the containing folder for an `AGENTS.md` file. References follow the session's file-read permissions and ignore rules. If a reference cannot be resolved, Kiro leaves a visible unresolved-reference marker in the Steering content instead of silently dropping the document.
+On these surfaces, relative paths resolve from the workspace root for workspace Steering, from `~/.kiro/steering/` for global Steering, and from the containing folder for an `AGENTS.md` file. References follow the session's file-read permissions and ignore rules. If a reference cannot be resolved, Kiro leaves a visible unresolved-reference marker in the Steering content instead of silently dropping the document.
 
 ### Steering during a session
 
@@ -713,7 +713,7 @@ Only your feedback (the user who created the task) influences the agent's learni
 
 - [Custom Agents](https://kiro.dev/docs/custom-agents/) - Build specialized agents with tailored steering
 
-Page updated:   October 2, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
+Page updated:   October 6, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
