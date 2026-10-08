@@ -1,36 +1,12 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 07, 2026*
+*Compiled on October 08, 2026*
 
 ---
 # Get Started
 
 Kiro is an AI-powered development environment that helps you build software from prototype to production. One [unified agent harness](https://kiro.dev/docs/how-kiro-works/) powers every surface (IDE, CLI, Web, and Mobile) so your configuration, specs, and steering work everywhere.
 
-Local**Remote⌘K — Search for anything…*2*![](https://kiro.dev/images/crew/kirocrew-logo.svg)Kiro CrewSessions2ScheduleArtifactsAppsWorldsCrew ManagerDesign CritiqueIssue RadarLaunchDarklyOncall RadarSessionsNewOps4Launch2researcher ·  KiroCrewWebMon 09:14 AMCompetitive teardownReport saved to artifactswriter ·  KiroCrewWebSun 07:22 PMLaunch blog draftDraft v3 ready for reviewops ·  KiroCrewWebYesterday 07:43 PMPipeline health sweepAll 12 pipelines green — nothing to flagops ·  KiroCrewWebMon 12:33 PMNightly issue triage12 issues sorted, 2 escalatedkirocrew ·  KiroCrewWeb02:32 PMKnowledge base visualizerAnimating recall signals…code-reviewer ·  KiroCrewWeb01:05 PMCR review loopLoop 6/12 · Thinking…#843default ·  KiroCrewWebFri 01:50 PMStandup briefPosted to #team — 3 highlightsdefault ·  KiroCrewWebFri 11:58 AMDependency bump PRCI green — waiting on review#812default ·  KiroCrewWebWed 12:33 PMDocs drift checkTwo pages updatedOlder SessionsKnowledge base visualizerVisualize my knowledge base as a live graph — notes, repos, and runbooks as nodes, and show recalls travelling between them.4 stepsQueriedknowledge graph · 128 nodes, 412 edgesSpawned 3 sub-agentslayout · motion · a11y**Graph is live.** I read your knowledge base and turned it into the graph in the Browser tab on the right.
-- **Nodes** are your notes, repos, and runbooks — 128 of them, with **kiro** as the hub they all connect back to.
-- **Edges** are the 412 links between them: a runbook that cites a repo, a note that references a lesson.
-- **Signals** travel along an edge each time a memory is recalled, so you can watch what the agent is drawing on right now.
-
-It redraws itself as the knowledge base changes.claude-fable-5 · 12.4 credits · 1m 42sNice. Make the hub breathe, and slow the signals down a touch.3 stepsEditedgraph.html · hub halo pulse 3.2sTunedsignal speed 1.6s → 2.4sReloadedpreview · Browser tabThe hub now breathes on a 3.2s cycle and signals take about 2.4s per edge, so you can follow a single recall from note to hub. Preview refreshed on the right.claude-fable-5 · 12.4 credits · 1m 42sShip itColor edges by sourceShow recall countskirocrewKiroCrewWebautoBrowserhttp://127.0.0.1:3200/brain/graph.htmlmemorylessonsskillskiro-clikiro-agentacpdeploy runbookdesign tokensschedulespipelinesstandup notesa11y checklistvendor docsincident #812kiroKnowledge base128 nodes · 412 edges**live · 9 recalls/minKnowledge base — live graphupdating…
-          /* match tailwind animate-pulse (live app): 2s cubic, dip to .5 */
-          @keyframes kc-pulse{50%{opacity:.5}}
-          .kc-pulse{animation:kc-pulse 2s cubic-bezier(.4,0,.6,1) infinite}
-          @keyframes kc-spin{to{transform:rotate(360deg)}}
-          .kc-spin{animation:kc-spin 1s linear infinite}
-          /* inline reference to a panel tab inside an assistant reply */
-          .kc-tabref{background:#f0f0f0;color:#723acc;font-family:var(--font-code), 'Fragment Mono', ui-monospace, monospace;font-size:12px;padding:2px 5px;border-radius:4px}
-          /* assistant prose: bullet lists as the real chat renders markdown */
-          .kc-assistant ul{margin:10px 0 4px;padding-left:20px;line-height:1.6;list-style:disc}
-          .kc-assistant code{font-family:var(--font-code), 'Fragment Mono', ui-monospace, monospace;font-size:12.5px}
-          @keyframes kc-shimmer{0%,100%{opacity:1}50%{opacity:.45}}
-          .kc-shimmer{animation:kc-shimmer 1.8s ease-in-out infinite}
-          /* BrainGraph: hub halo breathes (SMIL signals are paused from BrainGraph.tsx) */
-          @keyframes kc-breathe{50%{transform:scale(1.18);opacity:.75}}
-          .kc-graph-halo,.kc-graph-hub{transform-box:fill-box;transform-origin:center;animation:kc-breathe 3.2s ease-in-out infinite}
-          @media (prefers-reduced-motion: reduce){
-            .kc-pulse,.kc-shimmer,.kc-spin,.kc-graph-halo,.kc-graph-hub{animation:none}
-          }
-        [Crew](https://kiro.dev/docs/crew/)[IDE](https://kiro.dev/docs/ide/)Loading image...![Kiro in the browser interface](https://kiro.dev/images/home/primary-web.png?h=f855b545)[Web](https://kiro.dev/docs/web/)
+[IDE](https://kiro.dev/docs/ide/)Loading image...![Kiro in the browser interface](https://kiro.dev/images/home/primary-web.png?h=f855b545)[Web](https://kiro.dev/docs/web/)
 
 Terminal — 80×24
 
@@ -40,7 +16,7 @@ Loading cast file...[CLI](https://kiro.dev/docs/cli/)Loading image...![Kiro iOS 
 
 Pick the surface that fits your workflow. Your `.kiro/` configuration is shared across all of them.
 
-[CrewPersonal AI agent with autonomous tasks, scheduling, memory, and multi-channel access](https://kiro.dev/docs/crew/)[IDEDesktop editor with chat, specs, hooks, and full editor integration](https://kiro.dev/docs/ide/)[CLITerminal-native agent with headless mode, session management, and CI integration](https://kiro.dev/docs/cli/)[WebBrowser-based agent for multi-repo tasks that plans, implements, and opens PRs](https://kiro.dev/docs/web/)[MobileMonitor tasks, review PRs, and chat with your agent on the go](https://kiro.dev/docs/mobile/)
+[IDEDesktop editor with chat, specs, hooks, and full editor integration](https://kiro.dev/docs/ide/)[CLITerminal-native agent with headless mode, session management, and CI integration](https://kiro.dev/docs/cli/)[WebBrowser-based agent for multi-repo tasks that plans, implements, and opens PRs](https://kiro.dev/docs/web/)[MobileMonitor tasks, review PRs, and chat with your agent on the go](https://kiro.dev/docs/mobile/)[CrewPersonal AI agent with autonomous tasks, scheduling, memory, and multi-channel access](https://kiro.dev/docs/crew/)
 
 ### What you can do
 
@@ -74,7 +50,7 @@ Each surface adds its own way of working on top: the IDE brings editor integrati
 
 ### Learn more
 
-[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   October 1, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   October 7, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
@@ -1311,7 +1287,11 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [Models](https://kiro.dev/docs/models/) — available AI models
 
-Page updated:   October 2, 2026[2.x reference](https://kiro.dev/docs/cli/2x-reference/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+- [Workflows](https://kiro.dev/docs/workflows/) — run reusable multi-step agent plans in the background
+
+- [File explorer](https://kiro.dev/docs/web/using-the-agent/file-explorer/) — browse, view, and download the session's workspace files
+
+Page updated:   October 7, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
