@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 09, 2026*
+*Compiled on October 10, 2026*
 
 ---
 # Get Started
@@ -404,7 +404,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   October 2, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   October 10, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -847,10 +847,10 @@ Hooks run shell commands or agent prompts automatically when specific events hap
 
 | Capability | IDE | CLI | Web | Mobile |
 | --- | --- | --- | --- | --- |
-| Event-driven hooks | ✓ | ✓ | ✓ | — |
-| Shell command actions | ✓ | ✓ | ✓ | — |
-| Agent prompt actions | ✓ | ✓ | ✓ | — |
-| Create Hooks by asking the agent in chat | ✓ | ✓ | ✓ | — |
+| Event-driven hooks | ✓ | ✓ | — | — |
+| Shell command actions | ✓ | ✓ | — | — |
+| Agent prompt actions | ✓ | ✓ | — | — |
+| Create Hooks by asking the agent in chat | ✓ | ✓ | — | — |
 
 ### What you can do with hooks
 
@@ -884,7 +884,7 @@ This file lives at `.kiro/hooks/lint-on-save.json` and activates automatically -
 
 ### How hooks work
 
-Hook configurations are JSON files stored in `.kiro/hooks/`. Each file defines one or more hooks with a trigger event, an optional matcher pattern, and an action.
+Project Hook configurations are JSON files stored in `.kiro/hooks/`. Kiro CLI V3 also loads global Hooks from `~/.kiro/hooks/`, so one Hook can run across every workspace. Global and workspace Hooks run alongside each other. Each file defines one or more Hooks with a trigger event, an optional matcher pattern, and an action.
 
 When the trigger event fires, Kiro checks the matcher. If it matches (or no matcher is specified), the action executes:
 
@@ -923,7 +923,7 @@ Each hook file is a standalone JSON file at `.kiro/hooks/<id>.json`. The full sc
 | `hooks[].name` | Yes | Human-readable identifier for the hook |
 | `hooks[].description` | No | Documentation only |
 | `hooks[].trigger` | Yes | Event that fires the hook (PascalCase - see [Hook types](https://kiro.dev/docs/hooks/types/)) |
-| `hooks[].matcher` | No | Regex pattern to filter which events fire this hook. For `PreToolUse`/`PostToolUse`, matches tool name. For file events, matches file path. Defaults to always-match. |
+| `hooks[].matcher` | No | Filters which events fire this hook. For `PreToolUse`/`PostToolUse`, a tool selector (tool ID, category tag, `@mcp`, `@<server>`, or wildcard) or a regex against the tool ID; see [Hook types](https://kiro.dev/docs/hooks/types/#pre-tool-use). For file events, a regex against the file path. Defaults to always-match. |
 | `hooks[].action.type` | Yes | `"command"` (shell command) or `"agent"` (inject prompt) |
 | `hooks[].action.command` | Cond. | Shell command to run (required when `type` is `"command"`) |
 | `hooks[].action.prompt` | Cond. | Prompt text to inject (required when `type` is `"agent"`) |
@@ -982,11 +982,13 @@ If `confirmCommand` exits non-zero, times out, or prints invalid JSON, the stati
 
 #### File naming and location
 
-- **Location**: `.kiro/hooks/` in your project root
+- **Workspace location**: `.kiro/hooks/` in your project root
+
+- **Global location (CLI V3)**: `~/.kiro/hooks/` for Hooks that run in every workspace
 
 - **Naming**: Any `.json` filename works - use descriptive kebab-case names (e.g., `lint-on-save.json`, `guard-writes.json`)
 
-- **Multiple hooks per file**: A single file can define multiple hooks in the `hooks` array
+- **Multiple Hooks per file**: A single file can define multiple Hooks in the `hooks` array
 
 - **Activation**: Hooks activate automatically when a session starts - no manual registration needed
 
@@ -1000,11 +1002,11 @@ The resulting hook is saved as a JSON file in `.kiro/hooks/`.
 
 ### Previous versions
 
-The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. If you're upgrading from an earlier version:
+The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI V3**. If you're upgrading from an earlier version:
 
 - **From IDE 0.x** - Hooks moved from the previous format to standalone JSON files with PascalCase trigger names. See [What's new in IDE 1.0: Hooks](https://kiro.dev/docs/ide/whats-new-v1/hooks/) for the trigger mapping.
 
-- **From CLI 2.x** - Hooks moved from embedded fields in agent config to standalone files. Run `kiro-cli agent migrate` to auto-convert, or see [CLI 3.0 Hooks migration](https://kiro.dev/docs/cli/v3/hooks-migration/) for the manual mapping. For the legacy embedded format and trigger namespace, see the [CLI 2.x reference](https://kiro.dev/docs/cli/2x-reference/#hooks).
+- **From CLI 2.x** - Run `/upgrade-agent` to convert object-form Hooks into a profile-scoped array. Move definitions that should run independently of a profile or across surfaces into standalone `.kiro/hooks/*.json` files. See [CLI V3 Hooks migration](https://kiro.dev/docs/cli/v3/hooks-migration/) for both current placements and the trigger mapping.
 
 ### Next steps
 
@@ -1020,7 +1022,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI 3.0**. I
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)** - Common issues and solutions
 
-Page updated:   September 30, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   October 10, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
