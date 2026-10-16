@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 15, 2026*
+*Compiled on October 16, 2026*
 
 ---
 # Get Started
@@ -831,13 +831,15 @@ IDECLIWeb
 
     - If you choose Bug, describe your bug
 
+1. As you move through each phase, select the floating **Review** button on requirements, design, bugfix, or behavior documents. It opens [Markdown Review](https://kiro.dev/docs/ide/editor/markdown-review/), where you can comment on exact passages and send your comments to Kiro at once.
+
 1. Follow the workflow through each phase to implementation
 
 ### Learn more
 
 Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   October 2, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   October 15, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
