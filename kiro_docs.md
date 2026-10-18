@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 17, 2026*
+*Compiled on October 18, 2026*
 
 ---
 # Get Started
@@ -1650,4 +1650,4 @@ Kiro supports Open VSX extensions, including remote SSH extensions (the communit
 
 By following these practices, you can enjoy Kiro's capabilities while maintaining appropriate security boundaries for your development environment.
 
-Page updated:   August 4, 2026[Supported regions](https://kiro.dev/docs/enterprise/supported-regions/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
+Page updated:   August 4, 2026[Connect a custom OIDC provider in AWS GovCloud (US)](https://kiro.dev/docs/enterprise/govcloud/custom-oidc/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
