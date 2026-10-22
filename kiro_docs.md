@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 21, 2026*
+*Compiled on October 22, 2026*
 
 ---
 # Get Started
@@ -183,7 +183,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   October 5, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   October 21, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -404,7 +404,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   October 10, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   October 21, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -713,7 +713,7 @@ Only your feedback (the user who created the task) influences the agent's learni
 
 - [Custom Agents](https://kiro.dev/docs/custom-agents/) - Build specialized agents with tailored steering
 
-Page updated:   October 6, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
+Page updated:   October 21, 2026[Best practices](https://kiro.dev/docs/specs/best-practices/)[Hooks](https://kiro.dev/docs/hooks/)
 
 ---
 
@@ -1024,7 +1024,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI V3**. If
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)** - Common issues and solutions
 
-Page updated:   October 10, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   October 21, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
@@ -1178,7 +1178,7 @@ If you see "The following tools have large descriptions which may impact agent p
 
 - **[Best practices](https://kiro.dev/docs/mcp/security/)** - Security best practices for MCP usage
 
-Page updated:   October 2, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
+Page updated:   October 21, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
 
 ---
 
