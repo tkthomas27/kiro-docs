@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on October 23, 2026*
+*Compiled on October 24, 2026*
 
 ---
 # Get Started
@@ -1273,7 +1273,7 @@ If your organization uses AWS Identity Center, your administrator must first ena
 
 ### Features
 
-[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[SpecsShape requirements, a technical design, and an implementation plan, then have the agent implement and open a PR](https://kiro.dev/docs/specs/)[AutomationsSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)
+[Autonomous modeLet the agent own the outcome — it plans, codes, and opens PRs](https://kiro.dev/docs/web/autonomous-mode/)[SpecsShape requirements, a technical design, and an implementation plan, then have the agent implement and open a PR](https://kiro.dev/docs/specs/)[ScheduleSchedule recurring tasks on a cron — Kiro runs and opens PRs automatically](https://kiro.dev/docs/web/automations/)[SandboxIsolated execution environment with configurable access controls](https://kiro.dev/docs/web/sandbox/)[GitHub integrationRepositories, branches, pull requests, and issue-based tasks](https://kiro.dev/docs/web/github/)[GitLab integrationAdd a GitLab project, work on it, and open a merge request](https://kiro.dev/docs/web/gitlab/)
 
 ### Shared capabilities
 
@@ -1295,7 +1295,7 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [File explorer](https://kiro.dev/docs/web/using-the-agent/file-explorer/) — browse, view, and download the session's workspace files
 
-Page updated:   October 13, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+Page updated:   October 23, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
