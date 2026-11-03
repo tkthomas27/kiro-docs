@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 02, 2026*
+*Compiled on November 03, 2026*
 
 ---
 # Get Started
@@ -183,7 +183,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   October 21, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   November 2, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
