@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 03, 2026*
+*Compiled on November 04, 2026*
 
 ---
 # Get Started
@@ -110,6 +110,40 @@ Kiro IDE downloads updates automatically in the background. When an update is re
 
 To check manually, open the **Kiro** menu and select **Check for Updates...** On Windows or Linux, open the Command Palette (`Ctrl + Shift + P`) and run `Kiro: Check for Updates`.
 
+### Moving from the Kiro CLI desktop app
+
+Kiro CLI 3.0.0 replaces the Kiro CLI desktop app on macOS and Linux with a single `kiro-cli` binary. These desktop app features are removed:
+
+- Autocomplete and inline suggestions
+
+- `kiro-cli translate`
+
+- The dashboard
+
+- `kiro-cli doctor`. Run `kiro-cli diagnostic` for system information, or `kiro-cli issue` to report a problem.
+
+Your chats, settings, and login carry over to Kiro CLI 3.0.0.
+
+To move, use the step for how you installed the desktop app:
+
+- **macOS desktop app (DMG):** the desktop app moves to Kiro CLI on its own. To move now, run `kiro-cli update`. If `kiro-cli --version` still shows 2.x, run `kiro-cli update` again.
+
+- **macOS (Homebrew):** run `brew upgrade --cask kiro-cli`. Homebrew removes the desktop app and installs the `kiro-cli` binary.
+
+- **Other macOS installs:** run the install script, `curl -fsSL https://cli.kiro.dev/install | bash`.
+
+- **Linux AppImage:** run `kiro-cli update`. It installs Kiro CLI to `~/.local/bin/kiro-cli`. If `kiro-cli --version` still shows 2.x, run `kiro-cli update` again.
+
+- **Linux zip:** run `kiro-cli update`.
+
+- **Ubuntu .deb:** download `kiro-cli.deb` again and run `sudo dpkg -i kiro-cli.deb`.
+
+- **Amazon Linux RPM repository:** run `sudo dnf upgrade kiro-cli`.
+
+After you move, run `kiro-cli --version` and confirm it shows 3.0.0 or later.
+
+The first time you start a chat with Kiro CLI 3.0.0, it removes the files and shell integration that the desktop app left behind. If the install script prints a message that starts with `Caution:`, see [Caution message after installing](#caution-message-after-installing/cli).
+
 ### Downgrade to a previous version
 
 IDECLI
@@ -183,7 +217,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   November 2, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   November 3, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -1184,9 +1218,7 @@ Page updated:   October 21, 2026[Troubleshooting](https://kiro.dev/docs/hooks/tr
 
 # Command Line Interface (CLI)
 
-The Kiro CLI brings the power of AI-assisted development to your terminal. Build, test, and deploy applications using natural language commands and automated workflows.
-
-Get started with the Kiro CLI in minutes.
+Kiro CLI runs the Kiro agent in your terminal. In Kiro CLI 3.0.0 or later, its default agent harness is V3, the same [unified agent harness](https://kiro.dev/docs/how-kiro-works/) as the Kiro IDE and Kiro Web, so your Steering, custom agents, Hooks, permissions, and MCP servers apply here too. Install it, then pick the task you need below.
 
 Install on  macOS ,  Linux , or Windows`curl -fsSL https://cli.kiro.dev/install | bash`
 
@@ -1197,13 +1229,23 @@ cd my-project
 kiro-cli
 ```
 
-### CLI-unique features
+Kiro CLI 3.0.0 or later is a single standalone `kiro-cli` binary: the desktop app and inline shell autocomplete are retired. If you installed the desktop app, see [Moving from the Kiro CLI desktop app](https://kiro.dev/docs/getting-started/installation/#moving-from-the-kiro-cli-desktop-app).
 
-[Interactive ChatEngage with Kiro through natural conversation in your terminal.](https://kiro.dev/docs/cli/chat/)[Terminal UIRich terminal experience with syntax highlighting, panels, and themes.](https://kiro.dev/docs/cli/terminal-ui/)[Headless ModeRun prompts non-interactively in CI/CD pipelines with API keys.](https://kiro.dev/docs/cli/headless/)[Voice ModeDictate prompts hands-free with local Whisper speech-to-text.](https://kiro.dev/docs/cli/voice/)[ACPAgent Communication Protocol for programmatic agent interactions.](https://kiro.dev/docs/cli/acp/)[Auto CompleteIntelligent command completion with context awareness.](https://kiro.dev/docs/cli/autocomplete/)[Code IntelligenceLanguage-aware code understanding and navigation.](https://kiro.dev/docs/tools/code-intelligence/)
+### Start with what you need
+
+[Start a chatTalk to Kiro in your terminal, reference files, add images, and queue follow-up messages.](https://kiro.dev/docs/cli/chat/)[Choose an agent harnessSee which harness a launch starts, pick V3 or V2 for one run or as your default, and get back to V2.](https://kiro.dev/docs/cli/agent-harness/)[Terminal UIPanels, themes, keyboard shortcuts, and the fullscreen and voice modes built into the terminal interface.](https://kiro.dev/docs/cli/terminal-ui/)[Manage sessionsResume, search, and clean up local and cloud sessions, and branch a conversation with a tangent.](https://kiro.dev/docs/cli/chat/session-management/)[Automate with headless runsRun prompts non-interactively in scripts and CI/CD pipelines.](https://kiro.dev/docs/cli/headless/)[Connect an editor over ACPUse Kiro as the agent inside JetBrains IDEs, Zed, and other Agent Client Protocol clients.](https://kiro.dev/docs/cli/acp/)[Fix a problemMatch a symptom to the page that owns the fix.](https://kiro.dev/docs/cli/troubleshooting/)[Upgrade from CLI 2.xMove your sessions, agent configs, permissions, Hooks, and ACP clients to V3, one checked step at a time.](https://kiro.dev/docs/cli/v3/)[Code IntelligenceLanguage-aware code understanding and navigation.](https://kiro.dev/docs/tools/code-intelligence/)
+
+### Which harness runs
+
+Which harness each launch type starts, the one-run and saved choices, and the way back to V2 are covered once in [Choose an agent harness](https://kiro.dev/docs/cli/agent-harness/).
 
 ### Shared capabilities
 
-The Kiro CLI uses the same core capabilities as every other Kiro surface. See the Features section for full documentation:
+Kiro CLI supports the capabilities below. Each linked page lists its availability by surface:
+
+- [Specs](https://kiro.dev/docs/specs/) — Define requirements, generate designs, and execute task plans
+
+- [Workflows](https://kiro.dev/docs/workflows/) — Run multi-step work in the background in a V3 session; turn it on with the `chat.enableWorkflows` setting
 
 - [Steering](https://kiro.dev/docs/steering/) — Guide Kiro with project-specific context and conventions
 
@@ -1221,6 +1263,8 @@ The Kiro CLI uses the same core capabilities as every other Kiro surface. See th
 
 - [Permissions](https://kiro.dev/docs/permissions/) — Manage capability-based access controls
 
+- [Cloud sessions](https://kiro.dev/docs/cloud-sessions/) — Keep a session running in a managed sandbox after you disconnect
+
 ### Use cases
 
 The Kiro CLI is ideal for:
@@ -1235,11 +1279,11 @@ The Kiro CLI is ideal for:
 
 - **External Integrations**: Connect tools and services through MCP servers
 
-- **Intelligent Assistance**: Get context-aware suggestions and auto-completion
+- **Editor Integration**: Bring the Kiro agent into other editors over ACP
 
 - **Workflow Optimization**: Automate repetitive tasks with smart hooks
 
-Page updated:   August 4, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[What's new in V3](https://kiro.dev/docs/cli/v3/)
+Page updated:   November 3, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[Setup & First Run](https://kiro.dev/docs/cli/setup/)
 
 ---
 
