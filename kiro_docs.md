@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 11, 2026*
+*Compiled on November 12, 2026*
 
 ---
 # Get Started
@@ -1206,7 +1206,9 @@ If you see "The following tools have large descriptions which may impact agent p
 
 - **[Configuration](https://kiro.dev/docs/mcp/configuration/)** - Detailed configuration options and file structure
 
-- **[Server directory](https://kiro.dev/docs/mcp/servers/)** - Browse available MCP servers
+- **[MCP server directory](https://kiro.dev/mcp/)** - Browse curated MCP servers and add them to Kiro
+
+- **[Share MCP servers](https://kiro.dev/docs/mcp/share/)** - Create install links and an Add to Kiro badge for your server
 
 - **[Tools](https://kiro.dev/docs/mcp/usage/)** - Learn how to use MCP tools effectively
 
