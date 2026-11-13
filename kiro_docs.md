@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 12, 2026*
+*Compiled on November 13, 2026*
 
 ---
 # Get Started
@@ -10,7 +10,7 @@ Kiro is an AI-powered development environment that helps you build software from
 
 Terminal — 80×24
 
-Loading cast file...[CLI](https://kiro.dev/docs/cli/)Loading image...![Kiro iOS interface](https://kiro.dev/images/home/ios.png?h=ced0921c)[Mobile](https://kiro.dev/docs/mobile/)
+Loading cast file...[CLI](https://kiro.dev/docs/cli/)Loading image...![Kiro Mobile interface](https://kiro.dev/images/home/ios.png?h=ced0921c)[Mobile](https://kiro.dev/docs/mobile/)
 
 ### Choose your surface
 
@@ -50,7 +50,7 @@ Each surface adds its own way of working on top: the IDE brings editor integrati
 
 ### Learn more
 
-[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   October 7, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   November 12, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
@@ -66,7 +66,7 @@ Kiro is available as a desktop IDE, a command-line interface, a web app, a mobil
 
 **Web** - Any modern browser. No local installation required.
 
-**Mobile** - iOS, distributed through Apple TestFlight during early access.
+**Mobile** - Android 10 or later, through Google Play. iOS 26 or later, through Apple TestFlight during early access.
 
 **Crew** - macOS, Linux (x86_64 and ARM), or Windows. Python 3.9+ required for source installs.
 
@@ -217,7 +217,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   November 3, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   November 12, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -438,7 +438,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   October 21, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   November 12, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -759,12 +759,14 @@ Specs or specifications are structured artifacts that formalize the development 
 
 | Capability | IDE | CLI | Web | Mobile |
 | --- | --- | --- | --- | --- |
-| Feature Specs | ✓ | ✓ | ✓ | — |
-| Bugfix Specs | ✓ | ✓ | ✓ | — |
-| Quick Spec | ✓ | ✓ | ✓ | — |
-| Parallel task execution | ✓ | ✓ | ✓ | — |
+| Feature Specs | ✓ | ✓ | ✓ | ✓ |
+| Bugfix Specs | ✓ | ✓ | ✓ | ✓ |
+| Quick Spec | ✓ | ✓ | ✓ | ✓ |
+| Parallel task execution | ✓ | ✓ | ✓ | ✓ |
 | [Analyze Requirements](https://kiro.dev/docs/specs/analyze-requirements/) | ✓ | ✓ | — | — |
 | [Correctness](https://kiro.dev/docs/specs/correctness/) (property-based testing) | ✓ | — | — | — |
+
+On Mobile, the spec view shows `requirements.md`, `design.md`, and `tasks.md`. To read a Bugfix Spec's `bugfix.md`, use Kiro Web or ask the agent in the session.
 
 With Kiro's specs, you can:
 
@@ -873,7 +875,7 @@ IDECLIWeb
 
 Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   October 15, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   November 12, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
@@ -883,10 +885,10 @@ Hooks run shell commands or agent prompts automatically when specific events hap
 
 | Capability | IDE | CLI | Web | Mobile |
 | --- | --- | --- | --- | --- |
-| Event-driven hooks | ✓ | ✓ | — | — |
-| Shell command actions | ✓ | ✓ | — | — |
-| Agent prompt actions | ✓ | ✓ | — | — |
-| Create Hooks by asking the agent in chat | ✓ | ✓ | — | — |
+| Event-driven hooks | ✓ | ✓ | ✓ | — |
+| Shell command actions | ✓ | ✓ | ✓ | — |
+| Agent prompt actions | ✓ | ✓ | ✓ | — |
+| Create Hooks by asking the agent in chat | ✓ | ✓ | ✓ | — |
 
 ### What you can do with hooks
 
@@ -1058,7 +1060,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI V3**. If
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)** - Common issues and solutions
 
-Page updated:   October 21, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   November 12, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
@@ -1068,10 +1070,13 @@ Model Context Protocol (MCP) extends Kiro's capabilities by connecting to specia
 
 | Capability | IDE | CLI | Web | Mobile |
 | --- | --- | --- | --- | --- |
-| Local (stdio) MCP servers | ✓ | ✓ | ✓ | — |
-| Remote (HTTP/SSE) MCP servers | ✓ | ✓ | ✓ | — |
-| MCP config file (JSON) | ✓ | ✓ | ✓ | — |
+| Local (stdio) MCP servers | ✓ | ✓ | ✓ | ✓ |
+| Remote (HTTP/SSE) MCP servers | ✓ | ✓ | ✓ | ✓ |
+| OAuth sign-in for remote MCP servers | ✓ | ✓ | Powers only | Powers only |
+| MCP config file (JSON) | ✓ | ✓ | ✓ | ✓ |
 | Server-provided prompts and resources | ✓ | ✓ | ✓ | — |
+
+In Kiro Web and in sessions you start from Kiro Mobile, remote MCP servers connect with a URL and optional headers, such as an `Authorization` header that uses a [secret](https://kiro.dev/docs/web/sandbox/environment-variables/). The `oauth` settings in `mcp.json` aren't used. To connect a service that needs an OAuth sign-in, install its [Power](https://kiro.dev/docs/web/sandbox/mcp/#power-authentication-oauth) and select **Authorize**. Kiro Mobile has no `#` mention menu, so it can't insert server-provided prompts or resources.
 
 ### What is MCP?
 
@@ -1214,7 +1219,7 @@ If you see "The following tools have large descriptions which may impact agent p
 
 - **[Best practices](https://kiro.dev/docs/mcp/security/)** - Security best practices for MCP usage
 
-Page updated:   October 21, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
+Page updated:   November 12, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
 
 ---
 
