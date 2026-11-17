@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 16, 2026*
+*Compiled on November 17, 2026*
 
 ---
 # Get Started
@@ -1346,7 +1346,9 @@ Kiro Web uses the same core capabilities as the IDE and CLI. See the Features se
 
 - [File explorer](https://kiro.dev/docs/web/using-the-agent/file-explorer/) — browse, view, and download the session's workspace files
 
-Page updated:   October 23, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
+- [Terminal](https://kiro.dev/docs/web/using-the-agent/terminal/) — run commands in the session's workspace
+
+Page updated:   November 17, 2026[Troubleshooting](https://kiro.dev/docs/crew/troubleshooting/)[Setup & First Run](https://kiro.dev/docs/web/setup/)
 
 ---
 
