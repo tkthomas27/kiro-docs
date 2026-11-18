@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 17, 2026*
+*Compiled on November 18, 2026*
 
 ---
 # Get Started
@@ -217,7 +217,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   November 12, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   November 17, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -1316,7 +1316,7 @@ In every workflow, you review the result before it reaches your repository's def
 
 ### AWS Identity Center
 
-If your organization uses AWS Identity Center, your administrator must first enable Cloud Sessions by toggling on **Cloud Sessions** in **Settings > Kiro Settings**, in the AWS account where Kiro is configured. See [AWS Identity Center](https://kiro.dev/docs/web/identity-center/) for the full steps. Organizations that use Okta or Microsoft Entra ID can also use Kiro Web after an administrator enables **Cloud Sessions** (see [Cloud sessions prerequisites](https://kiro.dev/docs/cloud-sessions/#prerequisites)). Kiro Web is available in **US East (N. Virginia) `us-east-1`** only.
+If your organization uses AWS Identity Center, your administrator must first enable Cloud Sessions by toggling on **Cloud Sessions** in **Settings > Kiro Settings**, in the AWS account where Kiro is configured. See [AWS Identity Center](https://kiro.dev/docs/web/identity-center/) for the full steps. Organizations that use Okta or Microsoft Entra ID can also use Kiro Web after an administrator enables **Cloud Sessions** (see [Cloud sessions prerequisites](https://kiro.dev/docs/cloud-sessions/#prerequisites)). Kiro Web is available for Kiro profiles in **US East (N. Virginia) (`us-east-1`)** and **Europe (Frankfurt) (`eu-central-1`)**.
 
 ### Get started
 
