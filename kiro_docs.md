@@ -1,10 +1,10 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 20, 2026*
+*Compiled on November 21, 2026*
 
 ---
 # Get Started
 
-Kiro is an AI-powered development environment that helps you build software from prototype to production. One [unified agent harness](https://kiro.dev/docs/how-kiro-works/) powers every surface (IDE, CLI, Web, and Mobile) so your configuration, specs, and steering work everywhere.
+Kiro is an AI-powered development environment that helps you build software from prototype to production. One [unified agent harness](https://kiro.dev/docs/how-kiro-works/) powers every surface (IDE, VS Code, CLI, Web, and Mobile) so your configuration, specs, and steering work everywhere.
 
 [IDE](https://kiro.dev/docs/ide/)Loading image...![Kiro in the browser interface](https://kiro.dev/images/home/primary-web.png?h=f855b545)[Web](https://kiro.dev/docs/web/)
 
@@ -16,7 +16,7 @@ Loading cast file...[CLI](https://kiro.dev/docs/cli/)Loading image...![Kiro Mobi
 
 Pick the surface that fits your workflow. Your `.kiro/` configuration is shared across all of them.
 
-[IDEDesktop editor with chat, specs, hooks, and full editor integration](https://kiro.dev/docs/ide/)[CLITerminal-native agent with headless mode, session management, and CI integration](https://kiro.dev/docs/cli/)[WebBrowser-based agent for multi-repo tasks that plans, implements, and opens PRs](https://kiro.dev/docs/web/)[MobileMonitor tasks, review PRs, and chat with your agent on the go](https://kiro.dev/docs/mobile/)[CrewPersonal AI agent with autonomous tasks, scheduling, memory, and multi-channel access](https://kiro.dev/docs/crew/)
+[IDEDesktop editor with chat, specs, hooks, and full editor integration](https://kiro.dev/docs/ide/)[Kiro for VS CodeThe Kiro agent inside Visual Studio Code, with the same specs, steering, and MCP setup as Kiro IDE](https://kiro.dev/docs/extensions/vscode/)[CLITerminal-native agent with headless mode, session management, and CI integration](https://kiro.dev/docs/cli/)[WebBrowser-based agent for multi-repo tasks that plans, implements, and opens PRs](https://kiro.dev/docs/web/)[MobileMonitor tasks, review PRs, and chat with your agent on the go](https://kiro.dev/docs/mobile/)[CrewPersonal AI agent with autonomous tasks, scheduling, memory, and multi-channel access](https://kiro.dev/docs/crew/)
 
 ### What you can do
 
@@ -40,27 +40,29 @@ Pick the surface that fits your workflow. Your `.kiro/` configuration is shared 
 
 ### Get started
 
-[Install KiroSet up the IDE, CLI, or Web in under 5 minutes](https://kiro.dev/docs/getting-started/installation/)[Your first projectWalk through specs, steering, and hooks hands-on](https://kiro.dev/docs/getting-started/first-project/)
+[Install KiroSet up the IDE, VS Code extension, CLI, or Web in under 5 minutes](https://kiro.dev/docs/getting-started/installation/)[Your first projectWalk through specs, steering, and hooks hands-on](https://kiro.dev/docs/getting-started/first-project/)
 
 ### One agent, every surface
 
 Every Kiro surface is a front end to the same unified agent harness. Shared project configuration travels with your repository through `.kiro/`, with surface-specific behavior for permissions and primary-agent selection. Start a spec in the IDE, continue it from the CLI, hand off implementation to the Web agent, and keep the same project context across surfaces.
 
-Each surface adds its own way of working on top: the IDE brings editor integration, the CLI brings terminal-native and headless workflows, and the Web brings zero-setup sandboxed sessions. [How Kiro works](https://kiro.dev/docs/how-kiro-works/) explains the architecture, the agent loop, and where every capability plugs in.
+Each surface adds its own way of working on top. Kiro for VS Code brings the agent into an editor you already have. The IDE brings editor integration, the CLI brings terminal-native and headless workflows, and the Web brings zero-setup sandboxed sessions. [How Kiro works](https://kiro.dev/docs/how-kiro-works/) explains the architecture, the agent loop, and where every capability plugs in.
 
 ### Learn more
 
-[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   November 12, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
+[Interactive tutorialBuild a real project while learning Kiro's features through a game-based walkthrough](https://kiro.dev/docs/guides/learn-by-playing/)[ModelsAvailable AI models and how to select them](https://kiro.dev/docs/models/)[Privacy and securityHow Kiro handles your code and data](https://kiro.dev/docs/privacy-and-security/)[EnterpriseSSO, governance, usage monitoring, and team management](https://kiro.dev/docs/enterprise/concepts/)Page updated:   November 20, 2026[Installation](https://kiro.dev/docs/getting-started/installation/)
 
 ---
 
 # Installation
 
-Kiro is available as a desktop IDE, a command-line interface, a web app, a mobile app, and a personal AI agent (Crew). Pick the surface that fits your workflow. You can use more than one, and your `.kiro` configuration is shared across all of them.
+Kiro is available as a desktop IDE, an extension for VS Code, a command-line interface, a web app, a mobile app, and a personal AI agent (Crew). Pick the surface that fits your workflow. You can use more than one, and your `.kiro` configuration is shared across all of them.
 
 ### System requirements
 
 **IDE** - macOS (Intel + Apple Silicon), Windows 10/11 on x64 or ARM64, or Linux (Ubuntu 24+, Debian 13+, Fedora 40+, Arch, Mint 22+) on x86_64 or ARM64.
+
+**VS Code** - Visual Studio Code 1.145 or later on macOS, Windows, or Linux (x64 or ARM64). Local workspaces only.
 
 **CLI** - macOS, Windows 11 (PowerShell), or Linux (glibc 2.34+ or musl variant).
 
@@ -72,7 +74,7 @@ Kiro is available as a desktop IDE, a command-line interface, a web app, a mobil
 
 ### Install Kiro
 
-IDECLIWebMobileCrew1
+IDEVS CodeCLIWebMobileCrew1
 
 ##### Download Kiro
 
@@ -217,7 +219,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   November 18, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   November 20, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -1290,7 +1292,7 @@ The Kiro CLI is ideal for:
 
 - **Workflow Optimization**: Automate repetitive tasks with smart hooks
 
-Page updated:   November 3, 2026[0.x reference](https://kiro.dev/docs/ide/0x-reference/)[Setup & First Run](https://kiro.dev/docs/cli/setup/)
+Page updated:   November 3, 2026[Kiro for VS Code settings](https://kiro.dev/docs/extensions/vscode/settings/)[Setup & First Run](https://kiro.dev/docs/cli/setup/)
 
 ---
 
@@ -1692,15 +1694,16 @@ When using GitHub or Google authentication with Kiro, be aware that the Kiro age
 
     - Regularly audit access permissions
 
-### Remote extensions security
+### Remote development security
 
 **Warning**
 
-**Security Note**: Using remote extensions opens a connection between your local machine and the remote machine. Only connect to secure remote machines that you trust and that are owned by a party whom you trust. A compromised remote could use the connection to execute code on your local machine.
-Third-party extensions including remote extensions are not developed, maintained, or managed by Kiro. We are not responsible for third-party extensions and cannot guarantee their stability, compatibility, or ongoing support.
+Remote development opens a connection between your computer and another environment. Only connect to machines and open Dev Container configurations that you trust. A compromised remote environment could use that connection to run code on your computer.
 
-Kiro supports Open VSX extensions, including remote SSH extensions (the community-maintained [Open Remote - SSH](https://open-vsx.org/extension/jeanp413/open-remote-ssh) extension on Open VSX is a popular choice), to provide a familiar development experience. For comprehensive information about extension compatibility and support in Kiro, see our [extension compatibility guide](https://kiro.dev/docs/upgrade-guides/migrating-from-vscode/#extension-compatibility).
+Third-party extensions are not developed, maintained, or managed by Kiro. Kiro cannot guarantee their stability, compatibility, or continued support.
+
+Kiro IDE includes [Remote SSH and Dev Containers](https://kiro.dev/docs/ide/remote-development/). Verify SSH host keys, review Dev Container configuration and setup commands, and keep credentials out of prompts and project files. See the [extension compatibility guide](https://kiro.dev/docs/upgrade-guides/migrating-from-vscode/#extension-compatibility) before installing a third-party remote extension.
 
 By following these practices, you can enjoy Kiro's capabilities while maintaining appropriate security boundaries for your development environment.
 
-Page updated:   August 4, 2026[Connect a custom OIDC provider in AWS GovCloud (US)](https://kiro.dev/docs/enterprise/govcloud/custom-oidc/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
+Page updated:   November 20, 2026[Connect a custom OIDC provider in AWS GovCloud (US)](https://kiro.dev/docs/enterprise/govcloud/custom-oidc/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
