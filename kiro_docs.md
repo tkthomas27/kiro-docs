@@ -1,16 +1,10 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 24, 2026*
+*Compiled on November 25, 2026*
 
 ---
 # Get Started
 
 Kiro is an AI-powered development environment that helps you build software from prototype to production. One [unified agent harness](https://kiro.dev/docs/how-kiro-works/) powers every surface (IDE, VS Code, CLI, Web, and Mobile) so your configuration, specs, and steering work everywhere.
-
-[IDE](https://kiro.dev/docs/ide/)Loading image...![Kiro in the browser interface](https://kiro.dev/images/home/primary-web.png?h=f855b545)[Web](https://kiro.dev/docs/web/)
-
-Terminal — 80×24
-
-Loading cast file...[CLI](https://kiro.dev/docs/cli/)Loading image...![Kiro Mobile interface](https://kiro.dev/images/home/ios.png?h=ced0921c)[Mobile](https://kiro.dev/docs/mobile/)
 
 ### Choose your surface
 
@@ -68,7 +62,7 @@ Kiro is available as a desktop IDE, an extension for VS Code, a command-line int
 
 **Web** - Any modern browser. No local installation required.
 
-**Mobile** - Android 10 or later, through Google Play. iOS 26 or later, through Apple TestFlight during early access.
+**Mobile** - Android 10 or later, through Google Play. On iPhone with iOS 26 or later, use [**Kiro Enterprise** from the App Store](https://apps.apple.com/us/app/kiro-enterprise/id6828098828) for organization sign-in only, or the existing **Kiro app through Apple TestFlight** for social login with Google or GitHub, or sign-in with AWS Builder ID. See [Mobile requirements](https://kiro.dev/docs/mobile/setup/#requirements).
 
 **Crew** - macOS, Linux (x86_64 and ARM), or Windows. Python 3.9+ required for source installs.
 
@@ -106,7 +100,7 @@ From the welcome page, open a folder to start your first session. See [Your firs
 
 ### Upgrading
 
-IDECLIWeb
+IDECLIWebMobile
 
 Kiro IDE downloads updates automatically in the background. When an update is ready, you'll see a notification to restart and apply it.
 
@@ -219,7 +213,7 @@ For installation failures, network connectivity problems, sign-in errors, shell 
 
 - [Language support](https://kiro.dev/docs/guides/languages-and-frameworks/typescript-javascript-guide/) — environment setup per language
 
-Page updated:   November 20, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
+Page updated:   November 24, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)
 
 ---
 
@@ -440,7 +434,7 @@ Now that you've experienced Kiro's core features:
 
 - **Join the community**: Connect with other Kiro users on [Discord](https://discord.gg/kirodotdev)
 
-Page updated:   November 12, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
+Page updated:   November 15, 2026[Authentication](https://kiro.dev/docs/getting-started/authentication/)[Models](https://kiro.dev/docs/models/)
 
 ---
 
@@ -877,7 +871,7 @@ IDECLIWeb
 
 Go deeper into Kiro's Spec system with these guides:
 
-[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   November 12, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
+[Feature SpecsBuild new features with structured workflows.](https://kiro.dev/docs/specs/feature-specs/)[Quick SpecGenerate requirements, design, and tasks in one pass without approval gates.](https://kiro.dev/docs/specs/quick-spec/)[Analyze RequirementsCatch inconsistencies, ambiguities, and gaps in your requirements before design.](https://kiro.dev/docs/specs/analyze-requirements/)[Bugfix SpecsFix bugs surgically while preventing regressions.](https://kiro.dev/docs/specs/bugfix-specs/)[Best PracticesFAQs on best practices when working with specs.](https://kiro.dev/docs/specs/best-practices/)Page updated:   November 15, 2026[ACP integrations](https://kiro.dev/docs/acp/)[Feature Specs](https://kiro.dev/docs/specs/feature-specs/)
 
 ---
 
@@ -1062,7 +1056,7 @@ The `.kiro/hooks/*.json` format was introduced in **IDE 1.0** and **CLI V3**. If
 
 - **[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)** - Common issues and solutions
 
-Page updated:   November 12, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
+Page updated:   November 15, 2026[Steering](https://kiro.dev/docs/steering/)[Hook triggers](https://kiro.dev/docs/hooks/types/)
 
 ---
 
