@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 25, 2026*
+*Compiled on November 26, 2026*
 
 ---
 # Get Started
@@ -1492,6 +1492,10 @@ Security is a shared responsibility between AWS and you. The [shared responsibil
 
 This documentation helps you understand how to apply the shared responsibility model when using Kiro. It shows you how to configure Kiro to meet your security and compliance objectives. You also learn how to use other AWS services that help you to monitor and secure your Kiro resources.
 
+### Web search and web fetch
+
+Kiro provides a couple of built-in tools, namely `web_search` and `web_fetch`, for web exploration. When your agent conducts a search using the built-in web search tool, the query is processed within AWS infrastructure. Importantly, search queries are not sent to a third-party search engine or routed outside AWS. The web fetch tool enables your agent to retrieve content from the web, but it operates under the same network restrictions as the machine it's connected to. [**Learn more ->**](https://kiro.dev/docs/tools/web/)
+
 ### URL fetching
 
 In the Kiro chat module, you can paste a specific URL for your device to fetch and use it as context to help Kiro answer your query or solve your task. You are responsible for the URL content that you fetch and ensuring that your use complies with any applicable third-party terms and laws.
@@ -1700,4 +1704,4 @@ Kiro IDE includes [Remote SSH and Dev Containers](https://kiro.dev/docs/ide/remo
 
 By following these practices, you can enjoy Kiro's capabilities while maintaining appropriate security boundaries for your development environment.
 
-Page updated:   November 20, 2026[Connect a custom OIDC provider in AWS GovCloud (US)](https://kiro.dev/docs/enterprise/govcloud/custom-oidc/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
+Page updated:   November 26, 2026[Connect a custom OIDC provider in AWS GovCloud (US)](https://kiro.dev/docs/enterprise/govcloud/custom-oidc/)[Data protection](https://kiro.dev/docs/privacy-and-security/data-protection/)
