@@ -1,5 +1,5 @@
 # Kiro IDE Comprehensive Documentation
-*Compiled on November 27, 2026*
+*Compiled on November 28, 2026*
 
 ---
 # Get Started
@@ -1136,7 +1136,9 @@ Save the config file (`Cmd+S`). Servers reconnect automatically. Check the MCP s
 
 #### Installing from an install link
 
-Some server directories and websites offer one-click install links that use the `kiro://` URL scheme. Opening one of these links doesn't change your setup immediately: Kiro shows a confirmation dialog before anything is written to your configuration. The dialog lists the command that will run and its arguments, along with the names of any environment variables or headers - their values stay hidden. Review the details and confirm to add the server, or cancel to leave your configuration unchanged.
+Some server directories and websites offer one-click install links that use the `kiro://` URL scheme. Opening one of these links doesn't change your setup immediately: Kiro shows a confirmation dialog before anything is written to your configuration. For a local server, the dialog lists the command that will run, its arguments, its environment variables with their values, and its working directory. For a remote server, it lists the URL and the names of any headers.
+
+In Kiro IDE 1.5.49 or later, select **Install** when the dialog shows the whole configuration. If the configuration is too long for the dialog, or carries header values, the dialog offers only **Review Full Config**. That opens a read-only editor that shows every value in full. Those values can include API keys or tokens, so review them where others cannot see your screen. To add the server from there, select **Install MCP Server** in the editor toolbar and confirm. Cancel at any point to leave your configuration unchanged.
 
 **Warning**
 
@@ -1215,7 +1217,7 @@ If you see "The following tools have large descriptions which may impact agent p
 
 - **[Best practices](https://kiro.dev/docs/mcp/security/)** - Security best practices for MCP usage
 
-Page updated:   November 12, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
+Page updated:   November 27, 2026[Troubleshooting](https://kiro.dev/docs/hooks/troubleshooting/)[Configuration](https://kiro.dev/docs/mcp/configuration/)
 
 ---
 
